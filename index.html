@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
+<html lang="zh-Hant"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>JUPAS 計分神器 2026</title>
+<title>HYCer JUPAS 計分神器 2026</title>
 <!-- icons via emoji -->
 <style>
-:root{--bg:#f0f4f8;--card:#fff;--card2:#f7f9fc;--text:#1a1f36;--sub:#596780;--border:#e2e8f0;--bs:#cbd5e1;--accent:#2563eb;--accentH:#1d4ed8;--accentBg:#eff6ff;--safe:#059669;--safeBg:#d1fae5;--likely:#2563eb;--likelyBg:#dbeafe;--possible:#d97706;--possibleBg:#fef3c7;--hard:#dc2626;--hardBg:#fee2e2;--r:14px;--rs:10px;--sh:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);--f:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC",sans-serif}
+:root{--bg:#ecf4f0;--card:#fff;--card2:#f7f9fc;--text:#1a1f36;--sub:#596780;--border:#c8e0d4;--bs:#b7d5c6;--accent:#2d6a4f;--accentH:#1b4332;--accentBg:#e8f4ee;--safe:#059669;--safeBg:#d1fae5;--likely:#2563eb;--likelyBg:#dbeafe;--possible:#d97706;--possibleBg:#fef3c7;--hard:#dc2626;--hardBg:#fee2e2;--r:14px;--rs:10px;--sh:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);--f:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC",sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:var(--f);font-size:15px;line-height:1.6;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
-header{background:linear-gradient(135deg,#1e40af 0%,#2563eb 50%,#3b82f6 100%);color:#fff;padding:36px 28px 32px;margin:0 -24px 24px;border-radius:0 0 20px 20px;box-shadow:0 4px 24px rgba(37,99,235,.2)}
+header{background:linear-gradient(135deg,#1b4332 0%,#2d6a4f 50%,#40916c 100%);color:#fff;padding:36px 28px 32px;margin:0 -24px 24px;border-radius:0 0 20px 20px;box-shadow:0 4px 24px rgba(45,106,79,.3)}
 header h1{font-size:26px;font-weight:800;letter-spacing:-0.02em}
 header p{opacity:.92;font-size:14px;margin-top:6px;max-width:600px}
 header .meta{font-size:11px;opacity:.75;margin-top:10px;letter-spacing:0.01em}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:18px;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s}
 .card-hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .card-hd h2{font-size:16px;font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:8px 14px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--f);transition:all .15s;box-shadow:0 1px 3px rgba(37,99,235,.2)}
+.btn{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:8px 14px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--f);transition:all .15s;box-shadow:0 1px 3px rgba(45,106,79,.2)}
 .btn:hover{background:var(--accentH);transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.25)}
 .btn-g{background:transparent;color:var(--text);border:1px solid var(--bs)}
 .btn-g:hover{background:var(--card2)}
@@ -61,7 +60,7 @@ header .meta{font-size:11px;opacity:.75;margin-top:10px;letter-spacing:0.01em}
 .st-possible{background:var(--possibleBg);color:var(--possible)}
 .st-hard{background:var(--hardBg);color:var(--hard)}
 .st-unknown{background:#f3f4f6;color:#6b7280}
-.ssb{display:inline-block;background:#f0e6ff;color:#7c3aed;font-size:8.5px;font-weight:600;padding:1.5px 5px;border-radius:3px;margin-left:3px;vertical-align:middle}
+.ssb{display:inline-block;background:#f0e6ff;color:#7c3aed;font-size:8.5px;font-weight:600;padding:1.5px 5px;border-radius:3px;margin-left:3px;vertical-align:middle}.sfb{display:inline-block;background:#fff3e0;color:#e65100;font-size:8.5px;font-weight:600;padding:1.5px 5px;border-radius:3px;margin-left:3px;vertical-align:middle}
 .wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
 .wc{background:var(--card2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 10px}
 .wc-s{font-weight:600;font-size:11px}
@@ -141,70 +140,29 @@ header .meta{font-size:11px;opacity:.75;margin-top:10px;letter-spacing:0.01em}
 /* Flexible Admission table */
 #flex-table .bdt tr:hover{background:var(--card2)}
 #flex-table .bdt td{vertical-align:middle;padding:8px}
+
+/* ── Chatbot FAB ── */
+#chatbot-fab{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+#chatbot-fab .fab-tooltip{background:#1a1f36;color:#fff;font-size:12px;padding:8px 12px;border-radius:10px;line-height:1.4;max-width:220px;text-align:right;box-shadow:0 4px 16px rgba(0,0,0,.18);opacity:0;transform:translateY(6px) scale(.96);transition:all .2s;pointer-events:none}
+#chatbot-fab:hover .fab-tooltip{opacity:1;transform:translateY(0) scale(1)}
+#chatbot-fab a.fab-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;padding:12px 18px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(45,106,79,.35);transition:all .2s}
+#chatbot-fab a.fab-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,106,79,.45)}
+#chatbot-fab a.fab-btn .fab-icon{font-size:20px}
+
 </style>
 </head>
 <body>
-<!-- Google OAuth Login Screen -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<style>
-#login-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#1e40af 0%,#2563eb 50%,#3b82f6 100%);display:flex;align-items:center;justify-content:center;z-index:99999;}
-#login-card{background:#fff;border-radius:20px;padding:40px 36px;max-width:380px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.18);}
-#login-card h2{font-size:22px;font-weight:800;color:#1a1f36;margin-bottom:6px;}
-#login-card p{font-size:13px;color:#596780;margin-bottom:24px;line-height:1.5;}
-#login-card .logo{font-size:32px;margin-bottom:12px;}
-#login-error{color:#dc2626;font-size:12px;margin-top:12px;display:none;}
-</style>
-<div id="login-overlay">
-  <div id="login-card">
-    <div class="logo">🎓</div>
-    <h2>JUPAS 計分神器 2026</h2>
-    <p>請以學校 Google 帳戶登入<br>（@intranet.plkhyc1984.edu.hk 或 @plkhyc1984.edu.hk）</p>
-    <div id="g_id_onload"
-      data-client_id="811716880168-0mh7fha3li84ihfp6pmgdv3j6pe9ia2v.apps.googleusercontent.com"
-      data-callback="handleGoogleLogin"
-      data-auto_prompt="false">
-    </div>
-    <div class="g_id_signin"
-      data-type="standard"
-      data-size="large"
-      data-theme="outline"
-      data-text="sign_in_with"
-      data-shape="rectangular"
-      data-logo_alignment="left">
-    </div>
-    <div id="login-error">❌ 只限學校帳戶（@intranet.plkhyc1984.edu.hk / @plkhyc1984.edu.hk）登入</div>
-  </div>
-</div>
-<script>
-function handleGoogleLogin(response) {
-  try {
-    const payload = JSON.parse(atob(response.credential.split('.')[1]));
-    const email = payload.email || '';
-    const hd = payload.hd || '';
-    const allowedDomains = ['intranet.plkhyc1984.edu.hk', 'plkhyc1984.edu.hk'];
-    const domain = email.split('@')[1] || '';
-    if (allowedDomains.includes(hd) || allowedDomains.includes(domain)) {
-      document.getElementById('login-overlay').style.display = 'none';
-      document.getElementById('login-overlay').remove();
-    } else {
-      document.getElementById('login-error').style.display = 'block';
-    }
-  } catch(e) {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('login-error').textContent = '登入出錯，請重試。';
-  }
-}
-</script>
+
 <div class="wrap">
 <header>
-<h1>📊 JUPAS 計分神器 2026</h1>
-<p>輸入你的 DSE 預測成績，即時計算 14 所 JUPAS 院校共 405 個課程的入學分數。支援科目加權、What-If 分析及課程詳情。</p>
-<div class="meta">數據: 2025 JUPAS 官方入學成績 · 14 所院校 · 375 個課程 · 含完整科目加權 · 8.5分制(UGC) + 7分制(HKBU/嶺大/教大/都會/SSSDP)</div>
+<h1>🎓 HYCer JUPAS 計分神器 2026</h1>
+<p>準備好考DSE了嗎？做了多少份Past Paper？報了多少個補習班？<br>輸入老師給你的預測成績，即時計算 16 所 JUPAS 院校共 491 個課程的入學分數。支援科目加權、What-If 分析（含退修分析）及課程詳情。</p>
+<div class="meta">數據: 2025 JUPAS 官方入學成績 · 16 所院校 · 491 個課程 · 含完整科目加權 · 8.5分制(UGC) + 7分制(HKBU/嶺大/教大/都會/SSSDP)</div>
 </header>
 <div class="card"><div class="card-hd"><h2>✏️ 你的 DSE 成績</h2><div class="bgrp"><button class="btn btn-g" id="btn-save">💾 儲存</button><button class="btn btn-g" id="btn-load">📂 載入</button><button class="btn btn-g" id="btn-reset">🗑️ 重設</button></div></div><div id="core-inputs"><h3 style="font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">核心科目</h3><div class="sgrid" id="core-grid"></div></div><div id="elective-inputs" style="margin-top:16px"><h3 style="font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">選修科目 <span style="font-weight:400;text-transform:none">(最多4科)</span></h3><div id="elective-slots"></div><button class="btn btn-g" id="btn-add-elective" style="margin-top:8px">＋ 新增選修科</button></div><div class="pfl" id="pfl"></div></div>
 <div class="card" id="sum-sec" style="display:none"><div class="card-hd"><h2>📈 成績概覽</h2></div><div class="ssm" id="ssm"></div><div class="uov" id="uov"></div></div>
-<div class="card"><div class="tabs"><div class="tab act" data-t="progs">📋 課程 <span class="cb" id="pcnt">0</span></div><div class="tab" data-t="wif">🔮 What-If</div><div class="tab" data-t="flex">⚡ 語文失手</div><div class="tab" data-t="exp">💾 匯出</div></div>
-<div class="tp act" id="tp-progs"><div class="pf"><input type="search" id="sbox" class="sx" placeholder="搜尋課程/編號..."><select id="fst" class="fs"><option value="all">全部狀態</option><option value="safe">穩陣 (≥UQ)</option><option value="likely">有機會 (≥Med)</option><option value="possible">有望 (≥LQ)</option><option value="hard">較困難</option></select><select id="funi" class="fs"><option value="all">全部大學</option></select></div><div style="display:flex;gap:10px;flex-wrap:wrap;padding:6px 0;font-size:10px;margin-bottom:8px;border-bottom:1px solid var(--border)"><span style="color:var(--safe)">🟢 穩陣 = 你的分 ≥ 上四分位(UQ)</span><span style="color:var(--likely)">🔵 有機會 = ≥ 中位數</span><span style="color:var(--possible)">🟡 有望 = ≥ 下四分位(LQ)</span><span style="color:var(--hard)">🔴 較困難 = < LQ</span></div><div id="plist"></div></div>
+<div class="card"><div class="tabs"><div class="tab act" data-t="progs">📋 課程 <span class="cb" id="pcnt">0</span></div><div class="tab" data-t="wif">🔮 What-If</div><div class="tab" data-t="flex">⚡ 語文失手</div><div class="tab" data-t="chat">🤖 輔導</div><div class="tab" data-t="exp">💾 匯出</div></div>
+<div class="tp act" id="tp-progs"><div class="pf"><input type="search" id="sbox" class="sx" placeholder="搜尋課程/編號..."><select id="fst" class="fs"><option value="all">全部狀態</option><option value="safe">穩陣 (≥UQ)</option><option value="likely">有機會 (≥Med)</option><option value="possible">有望 (≥LQ)</option><option value="hard">較困難</option></select><select id="funi" class="fs"><option value="all">全部大學</option></select></div><div style="display:flex;gap:10px;flex-wrap:wrap;padding:6px 0;font-size:10px;margin-bottom:8px;border-bottom:1px solid var(--border)"><span style="color:var(--safe)">🟢 穩陣 = 你的分 ≥ 上四分位(UQ)</span><span style="color:var(--likely)">🔵 有機會 = ≥ 中位數</span><span style="color:var(--possible)">🟡 有望 = ≥ 下四分位(LQ)</span><span style="color:var(--hard)">🔴 較困難 = &lt; LQ</span></div><div id="plist"></div></div>
 <div class="tp" id="tp-wif"><p style="font-size:12px;color:var(--sub);margin-bottom:10px">模擬某科升/降一級對取錄機會的變化。數字 = Safe+Likely+Possible 課程增減。</p><div class="wg" id="wgrid"></div>
 <div id="drop-section" style="margin-top:18px;border-top:1px solid var(--border);padding-top:14px;display:none">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
@@ -228,11 +186,36 @@ function handleGoogleLogin(response) {
 <div id="flex-table"></div>
 <div class="nb" style="margin-top:12px"><strong>⚠️ 注意：</strong>彈性收生≠保證取錄。所有院校均要求 Band A 選擇，部分需面試。條件每年可能調整，請以官方最新公佈為準。</div>
 </div>
-<div class="tp" id="tp-exp"><p style="font-size:12px;color:var(--sub);margin-bottom:12px">匯出成績及分析結果。</p><div class="bgrp"><button class="btn" id="btn-pdf">🖨️ 列印/PDF</button><button class="btn btn-g" id="btn-ej">📥 匯出 JSON</button><button class="btn btn-g" id="btn-ij">📤 匯入 JSON</button></div><input type="file" id="ifile" accept=".json" hidden></div>
+<div class="tp" id="tp-chat">
+  <div style="max-width:520px;margin:0 auto;text-align:center;padding:32px 16px 16px">
+    <div style="font-size:52px;margin-bottom:12px">🤖</div>
+    <h2 style="font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">S6 HYCer 升學資訊 &amp; 個人輔導小助手</h2>
+    <p style="font-size:13px;color:var(--sub);line-height:1.7;margin-bottom:20px">無論你想了解 JUPAS、本地副學位、VTC、非聯招、直接就業，還是海外升學方向，我都可以陪你整理思路、比較出路，並協助準備 OEA、SLP 及面試。</p>
+    <div style="background:var(--accentBg);border-radius:14px;padding:16px 20px;margin-bottom:20px;text-align:left">
+      <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:10px">🌟 我可以幫你：</div>
+      <div style="font-size:12px;color:var(--text);line-height:1.9">
+        📊 根據預測成績，分析 JUPAS 選科思路<br>
+        🏫 比較本地、海外、內地、台灣升學選項<br>
+        ✍️ 幫你 draft OEA、SLP 及個人自述<br>
+        🎤 與你進行大學面試模擬練習<br>
+        🧭 當你迷惘時，陪你整理適合的方向
+      </div>
+    </div>
+    <a href="https://gemini.google.com/gem/1ZAnwcDSQ8_rsfXtcWBToGmxas5JTA2eh?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,.3);transition:all .2s">
+      <span style="font-size:20px">🤖</span> 立即開始對話
+      <span style="font-size:12px;opacity:.8">↗ Gemini</span>
+    </a>
+    <p style="font-size:11px;color:var(--sub);margin-top:16px;line-height:1.6">
+      ⚠️ 請勿輸入姓名、身份證或其他敏感資料。<br>
+      最新入學要求請以各院校官方資料為準。
+    </p>
+  </div>
+</div>
+<div class="tp" id="tp-exp"><p style="font-size:12px;color:var(--sub);margin-bottom:12px">匯出成績及分析結果。</p><div class="bgrp"><button class="btn" id="btn-pdf">🖨️ 列印/PDF</button><button class="btn btn-g" id="btn-ej">📥 匯出 JSON</button><button class="btn btn-g" id="btn-ij">📤 匯入 JSON</button></div><input type="file" id="ifile" accept=".json" hidden=""></div>
 <div class="nb"><strong>注意：</strong>分數僅供參考。收生另考慮面試、Band選擇等。<strong>計分制：</strong>UGC用 <b>8.5分制</b>；<span class="ssb">SSSDP</span>用 <b>7分制</b>。恒大另有加權制。分數不可跨校比較。</div>
 </div>
 </div>
-<div class="mbg" id="mbg"><div class="mdl"><button class="cls" id="mcls">&times;</button><div id="mc"></div></div></div>
+<div class="mbg" id="mbg"><div class="mdl"><button class="cls" id="mcls">×</button><div id="mc"></div></div></div>
 <script>
 window.onerror=function(){return true;};
 
@@ -265,79 +248,79 @@ var SUBJ=[
 {id:'catc_fr',n:'Cat C 法文',k:'catc'},{id:'catc_de',n:'Cat C 德文',k:'catc'},{id:'catc_ja',n:'Cat C 日文',k:'catc'},{id:'catc_ko',n:'Cat C 韓文',k:'catc'},{id:'catc_es',n:'Cat C 西班牙文',k:'catc'}
 ];
 var UNI=[
-{id:'hku',s:'HKU',n:'香港大學',c:'#0e6c41',cbr:'never',cbp:{},ccr:'count',ccp:{N1:7,N2:5.5,N3:4,G6:7,G5:5.5,G4:4,G3:3,C2:7,C1:5.5,B2:4,B1:3,A2:3},p:[
+{id:'hku',s:'HKU',n:'香港大學',c:'#0e6c41',cbr:'bonus',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:7,N2:5.5,N3:4,G6:7,G5:5.5,G4:4,G3:3,C2:7,C1:5.5,B2:4,B1:3,A2:3},p:[
 {code:'JS6004',nm:'建築學文學士',fac:'建築學院',f:{d:'Best 5',bn:5},a:{uq:32.0,m:29.0,lq:28.0}},
 {code:'JS6016',nm:'理學士(測量學)',fac:'建築學院',f:{d:'Best 5',bn:5},a:{uq:31.0,m:29.0,lq:28.0}},
 {code:'JS6028',nm:'園境學文學士',fac:'建築學院',f:{d:'Best 5',bn:5},a:{uq:38.0,m:35.0,lq:31.0}},
 {code:'JS6042',nm:'城市研究文學士',fac:'建築學院',f:{d:'Best 5',bn:5},a:{uq:32.0,m:29.0,lq:27.0}},
-{code:'JS6054',nm:'文學士',fac:'文學院',f:{d:'Best 5',bn:5,w:{eng:2,chi:1.5}},a:{uq:37.0,m:35.0,lq:34.0}},
-{code:'JS6066',nm:'文學士及教育學士(語文教育)–英文教育',fac:'文學院',f:{d:'Best 5',bn:5,w:{eng:2.0}},a:{uq:34.0,m:32.0,lq:32.0}},
-{code:'JS6080',nm:'文學士及教育學士(語文教育)–中文教育',fac:'文學院',f:{d:'Best 5',bn:5,w:{chi:2.0}},a:{uq:36.0,m:35.0,lq:34.0}},
-{code:'JS6286',nm:'文學士(人文及數碼科技)',fac:'文學院',f:{d:'Best 5',bn:5,w:{eng:2,chi:1.5}},a:{uq:41.0,m:37.0,lq:35.0}},
-{code:'JS6298',nm:'文學士及工學士(人工智能及數據科學)',fac:'文學院',f:{d:'Best 5',bn:5,w:{eng:2,math:1.5,bio:1.5,chem:1.5,phy:1.5,econ:1.5,ict:1.5,m1:1.5,m2:1.5}},a:{uq:44.0,m:42.0,lq:42.0}},
-{code:'JS6092',nm:'教育學士(幼兒教育及特殊教育)',fac:'教育學院',f:{d:'Best 5 (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:27.0,m:27.0,lq:26.0}},
-{code:'JS6119',nm:'教育學士及理學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5,bio:1.5,chem:1.5,phy:1.5,m1:1.5,m2:1.5}},a:{uq:46.0,m:44.0,lq:43.0}},
-{code:'JS6157',nm:'理學士(言語及聽覺科學)',fac:'教育學院',f:{d:'Best 5',bn:5,w:{eng:2.0}},a:{uq:35.0,m:34.0,lq:34.0}},
+{code:'JS6054',nm:'文學士',fac:'文學院',f:{d:'Best 5 (incl. Eng, Eng×2,Chi×1.5)',bn:5,inc:['eng'],w:{eng:2,chi:1.5}},a:{uq:37.0,m:35.0,lq:34.0}},
+{code:'JS6066',nm:'文學士及教育學士(語文教育)–英文教育',fac:'文學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:34.0,m:32.0,lq:32.0}},
+{code:'JS6080',nm:'文學士及教育學士(語文教育)–中文教育',fac:'文學院',f:{d:'Best 5 (incl. Chi, Chi×1.5)',bn:5,inc:['chi'],w:{chi:1.5}},a:{uq:36.0,m:35.0,lq:34.0}},
+{code:'JS6286',nm:'文學士(人文及數碼科技)',fac:'文學院',f:{d:'Best 5 (incl. Eng, Eng×2,Chi×1.5)',bn:5,inc:['eng'],w:{eng:2,chi:1.5}},a:{uq:41.0,m:37.0,lq:35.0}},
+{code:'JS6298',nm:'文學士及工學士(人工智能及數據科學)',fac:'文學院',f:{d:'Best 5 (incl. Eng+Math, Eng×2,Math/Sci×1.5)',bn:5,inc:['eng','math'],w:{eng:2,math:1.5,bio:1.5,chem:1.5,phy:1.5,econ:1.5,ict:1.5,m1:1.5,m2:1.5}},a:{uq:44.0,m:42.0,lq:42.0}},
+{code:'JS6092',nm:'教育學士(幼兒教育及特殊教育)',fac:'教育學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:27.0,m:27.0,lq:26.0}},
+{code:'JS6119',nm:'教育學士及理學士',fac:'理學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5,Sci×1.5)',bn:5,inc:['eng','math'],w:{math:1.5,bio:1.5,chem:1.5,phy:1.5,m1:1.5,m2:1.5}},a:{uq:46.0,m:44.0,lq:43.0}},
+{code:'JS6157',nm:'理學士(言語及聽覺科學)',fac:'教育學院',f:{d:'Best 5',bn:5},a:{uq:35.0,m:34.0,lq:34.0}},
 {code:'JS6107',nm:'牙醫學士',fac:'牙醫學院',f:{d:'Best 6',bn:6,w:{bio:1.3,chem:1.3}},a:{uq:50.0,m:48.0,lq:47.0}},
-{code:'JS6212',nm:'文理學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:null,m:null,lq:null}},
+{code:'JS6212',nm:'文理學士',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:null,m:null,lq:null}},
 {code:'JS6224',nm:'文理學士(應用人工智能)',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:2,math:2,m1:2,m2:2,bio:1.5,chem:1.5,phy:1.5,ict:1.5}},a:{uq:57.0,m:53.0,lq:51.0}},
 {code:'JS6236',nm:'文理學士(設計+)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
 {code:'JS6248',nm:'文理學士(金融科技)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:35.0,m:34.0,lq:32.0}},
 {code:'JS6250',nm:'文理學士(環球衛生及發展)',fac:'醫學院',f:{d:'Best 5',bn:5},a:{uq:31.0,m:29.0,lq:28.0}},
-{code:'JS6262',nm:'工學士(數據科學及工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:null,m:null,lq:null}},
-{code:'JS6274',nm:'文學士(環球創意產業)',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:33.0,m:33.0,lq:32.0}},
-{code:'JS6705',nm:'心理學學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:31.0,m:31.0,lq:29.0}},
-{code:'JS6717',nm:'社會科學學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:34.0,m:31.0,lq:29.0}},
-{code:'JS6731',nm:'社會工作學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:28.0,m:28.0,lq:26.0}},
-{code:'JS6810',nm:'社會科學學士(政治學與法學)及法學士',fac:'法律學院',f:{d:'Best 6',bn:6,w:{eng:2.0}},a:{uq:39.0,m:37.0,lq:36.0}},
-{code:'JS6822',nm:'新聞、媒體與人工智能學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.5}},a:{uq:35.0,m:32.0,lq:31.0}},
-{code:'JS6078',nm:'文學士及法學士',fac:'文學院',f:{d:'Best 6',bn:6,w:{eng:2.0}},a:{uq:41.0,m:38.0,lq:36.0}},
-{code:'JS6406',nm:'法學士',fac:'法律學院',f:{d:'Best 6',bn:6,w:{eng:2.0}},a:{uq:36.0,m:35.0,lq:35.0}},
+{code:'JS6262',nm:'工學士(數據科學及工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:null,m:null,lq:null}},
+{code:'JS6274',nm:'文學士(環球創意產業)',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×2)',bn:5,inc:['eng'],w:{eng:2}},a:{uq:33.0,m:33.0,lq:32.0}},
+{code:'JS6705',nm:'心理學學士',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:31.0,m:31.0,lq:29.0}},
+{code:'JS6717',nm:'社會科學學士',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:34.0,m:31.0,lq:29.0}},
+{code:'JS6731',nm:'社會工作學士',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:28.0,m:28.0,lq:26.0}},
+{code:'JS6810',nm:'社會科學學士(政治學與法學)及法學士',fac:'法律學院',f:{d:'Best 6 (incl. Eng)',bn:6,inc:['eng']},a:{uq:39.0,m:37.0,lq:36.0}},
+{code:'JS6822',nm:'新聞、媒體與人工智能學士',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:35.0,m:32.0,lq:31.0}},
+{code:'JS6078',nm:'文學士及法學士',fac:'文學院',f:{d:'Best 6 (incl. Eng)',bn:6,inc:['eng']},a:{uq:41.0,m:38.0,lq:36.0}},
+{code:'JS6406',nm:'法學士',fac:'法律學院',f:{d:'Best 6 (incl. Eng)',bn:6,inc:['eng']},a:{uq:36.0,m:35.0,lq:35.0}},
 {code:'JS6858',nm:'理學士及法學士',fac:'法律學院',f:{d:'Best 6',bn:6,w:{eng:2,math:2,m1:2,m2:2,bio:2,chem:2,phy:2}},a:{uq:56.0,m:54.0,lq:50.0}},
 {code:'JS6456',nm:'內外全科醫學士',fac:'醫學院',f:{d:'Best 6',bn:6,w:{eng:1.5}},a:{uq:47.0,m:44.0,lq:42.0}},
-{code:'JS6468',nm:'護理學學士',fac:'醫學院',f:{d:'Best 5 + 0.5x6th',bn:5},a:{uq:28.0,m:27.0,lq:26.0}},
-{code:'JS6418',nm:'護理學學士(高級領導才能)',fac:'醫學院',f:{d:'Best 5 + 0.5x6th',bn:5},a:{uq:37.0,m:37.0,lq:36.0}},
+{code:'JS6468',nm:'護理學學士',fac:'醫學院',f:{d:'Best 5 + 0.5×6th',bn:5,bonus6:true,bonusW:0.5},a:{uq:28.0,m:27.0,lq:26.0}},
+{code:'JS6418',nm:'護理學學士(高級領導才能)',fac:'醫學院',f:{d:'Best 5 + 0.5×6th',bn:5,bonus6:true,bonusW:0.5},a:{uq:37.0,m:37.0,lq:36.0}},
 {code:'JS6482',nm:'中醫全科學士',fac:'醫學院',f:{d:'Best 5',bn:5,w:{chi:1.5}},a:{uq:34.0,m:33.0,lq:31.0}},
 {code:'JS6494',nm:'藥劑學學士',fac:'醫學院',f:{d:'Best 6',bn:6,w:{eng:1.5,chem:1.5}},a:{uq:41.0,m:39.0,lq:38.0}},
-{code:'JS6925',nm:'工學士(生物醫學工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:31.0,m:29.0,lq:29.0}},
+{code:'JS6925',nm:'工學士(生物醫學工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:31.0,m:29.0,lq:29.0}},
 {code:'JS6949',nm:'生物醫學學士',fac:'醫學院',f:{d:'Best 6',bn:6,w:{eng:1.5}},a:{uq:41.0,m:40.0,lq:39.0}},
 {code:'JS6602',nm:'理學士(創新及科技)',fac:'創新學院',f:{d:'Best 6 (Eng×2,Math×2,W9×2/1.5)',bn:6,w:{eng:2,math:2,bio:2,chem:2,phy:2,ict:2,m1:2,m2:2,dat:2}},a:{uq:58,m:55,lq:52}},
 {code:'JS6688',nm:'理學士(尖子計劃)',fac:'理學院',f:{d:'Best 5',bn:5,w:{bio:1.2,chem:1.2,phy:1.2,m1:1.2,m2:1.2}},a:{uq:36.0,m:34.0,lq:32.0}},
-{code:'JS6901',nm:'理學士',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5,bio:1.5,chem:1.5,phy:1.5,m1:1.5,m2:1.5}},a:{uq:39.0,m:37.0,lq:36.0}},
+{code:'JS6901',nm:'理學士',fac:'理學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5,Sci×1.5)',bn:5,inc:['eng','math'],w:{math:1.5,bio:1.5,chem:1.5,phy:1.5,m1:1.5,m2:1.5}},a:{uq:39.0,m:37.0,lq:36.0}},
 {code:'JS6729',nm:'理學士(精算學)',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.2,math:1.2,m1:1.2,m2:1.2}},a:{uq:36.0,m:35.0,lq:35.0}},
-{code:'JS6779',nm:'統計決策科學',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:33.0,m:33.0,lq:31.0}},
+{code:'JS6779',nm:'統計決策科學',fac:'理學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:33.0,m:33.0,lq:31.0}},
 {code:'JS6999',nm:'計算及數據科學',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5,bio:1.5,chem:1.5,phy:1.5,econ:1.5,ict:1.5,m1:1.5,m2:1.5}},a:{uq:44.0,m:41.0,lq:39.0}},
-{code:'JS6200',nm:'計算及數據科學(Delta+)',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:null,m:null,lq:null}},
-{code:'JS6303',nm:'工學學士(精英計劃)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:38.0,m:36.0,lq:35.0}},
-{code:'JS6315',nm:'工學士(數據及系統工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:28.0,m:26.0,lq:25.0}},
-{code:'JS6339',nm:'工學士(機械工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:28.0,m:27.0,lq:26.0}},
-{code:'JS6353',nm:'工學士(土木工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:29.0,m:28.0,lq:27.0}},
-{code:'JS6377',nm:'工學士及工程學碩士(工程人工智能)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:34.0,m:33.0,lq:31.0}},
-{code:'JS6937',nm:'環球工程及商業課程',fac:'商學院',f:{d:'Best 6',bn:6,w:{eng:1.5,math:1.5}},a:{uq:34.0,m:32.0,lq:30.0}},
-{code:'JS6987',nm:'工學士(計算機/電機/電子工程)',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.5}},a:{uq:31.0,m:29.0,lq:28.0}},
-{code:'JS6755',nm:'工商管理學學士',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:1.5,math:1.5}},a:{uq:37.0,m:37.0,lq:36.0}},
-{code:'JS6767',nm:'經濟學學士/經濟金融學學士',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:1.5,math:1.5}},a:{uq:40.0,m:40.0,lq:39.0}},
-{code:'JS6781',nm:'工商管理學學士(會計及財務)/工商管理學學士(分析主導會計)',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:1.5,math:1.5}},a:{uq:36.0,m:35.0,lq:34.0}},
-{code:'JS6793',nm:'工商管理學學士(商業分析)',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:1.5,math:1.5}},a:{uq:36.0,m:35.0,lq:34.0}},
-{code:'JS6808',nm:'工商管理學學士(法學)及法學士',fac:'商學院',f:{d:'Best 6',bn:6,w:{eng:1.5,math:1.5}},a:{uq:49.0,m:46.0,lq:45.0}},
-{code:'JS6846',nm:'理學士(營銷分析及科技)',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:1.5,math:1.5}},a:{uq:34.0,m:33.0,lq:32.0}},
-{code:'JS6860',nm:'金融學學士(資產管理及私人銀行)',fac:'商學院',f:{d:'Best 6',bn:6,w:{eng:1.5,math:1.5}},a:{uq:48.0,m:47.0,lq:46.0}},
-{code:'JS6884',nm:'理學士(計量金融)',fac:'商學院',f:{d:'Best 6',bn:6,w:{eng:1.5,math:1.25,m1:1.25,m2:1.25}},a:{uq:55.0,m:51.0,lq:50.0}},
-{code:'JS6896',nm:'工商管理學學士(國際商業及環球管理)',fac:'商學院',f:{d:'Best 6',bn:6,w:{eng:1.5,math:1.5}},a:{uq:56.0,m:54.0,lq:53.0}}
+{code:'JS6200',nm:'計算及數據科學(Delta+)',fac:'理學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:null,m:null,lq:null}},
+{code:'JS6303',nm:'工學學士(精英計劃)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:38.0,m:36.0,lq:35.0}},
+{code:'JS6315',nm:'工學士(數據及系統工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:28.0,m:26.0,lq:25.0}},
+{code:'JS6339',nm:'工學士(機械工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:28.0,m:27.0,lq:26.0}},
+{code:'JS6353',nm:'工學士(土木工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:29.0,m:28.0,lq:27.0}},
+{code:'JS6377',nm:'工學士及工程學碩士(工程人工智能)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:34.0,m:33.0,lq:31.0}},
+{code:'JS6937',nm:'環球工程及商業課程',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5)',bn:5,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:34.0,m:32.0,lq:30.0}},
+{code:'JS6987',nm:'工學士(計算機/電機/電子工程)',fac:'工學院',f:{d:'Best 5 (incl. Eng+Math, Math×1.5)',bn:5,inc:['eng','math'],w:{math:1.5}},a:{uq:31.0,m:29.0,lq:28.0}},
+{code:'JS6755',nm:'工商管理學學士',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×6th)',bn:5,bonus6:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:37.0,m:37.0,lq:36.0}},
+{code:'JS6767',nm:'經濟學學士/經濟金融學學士',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×6th)',bn:5,bonus6:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:40.0,m:40.0,lq:39.0}},
+{code:'JS6781',nm:'工商管理學學士(會計及財務)/工商管理學學士(分析主導會計)',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×6th)',bn:5,bonus6:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:36.0,m:35.0,lq:34.0}},
+{code:'JS6793',nm:'工商管理學學士(商業分析)',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×6th)',bn:5,bonus6:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:36.0,m:35.0,lq:34.0}},
+{code:'JS6808',nm:'工商管理學學士(法學)及法學士',fac:'商學院',f:{d:'Best 6 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×7th)',bn:6,bonus7:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:49.0,m:46.0,lq:45.0}},
+{code:'JS6846',nm:'理學士(營銷分析及科技)',fac:'商學院',f:{d:'Best 5 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×6th)',bn:5,bonus6:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:34.0,m:33.0,lq:32.0}},
+{code:'JS6860',nm:'金融學學士(資產管理及私人銀行)',fac:'商學院',f:{d:'Best 6 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×7th)',bn:6,bonus7:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:48.0,m:47.0,lq:46.0}},
+{code:'JS6884',nm:'理學士(計量金融)',fac:'商學院',f:{d:'Best 6 (incl. Eng+Math, Eng×1.5,Math/M1M2×1.25+0.2×7th)',bn:6,bonus7:true,inc:['eng','math'],w:{eng:1.5,math:1.25,m1:1.25,m2:1.25}},a:{uq:55.0,m:51.0,lq:50.0}},
+{code:'JS6896',nm:'工商管理學學士(國際商業及環球管理)',fac:'商學院',f:{d:'Best 6 (incl. Eng+Math, Eng×1.5,Math×1.5+0.2×7th)',bn:6,bonus7:true,inc:['eng','math'],w:{eng:1.5,math:1.5}},a:{uq:56.0,m:54.0,lq:53.0}}
 ]},
-{id:'cuhk',s:'CUHK',n:'香港中文大學',c:'#7a003c',cbr:'bonus',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},p:[
+{id:'cuhk',s:'CUHK',n:'香港中文大學',c:'#7a003c',cbr:'bonus',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},p:[
 {code:'JS4006',nm:'人類學',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:31.9,m:24.0,lq:23.0}},
 {code:'JS4018',nm:'中國語言及文學',fac:'文學院',f:{d:'Best 5 (Chi×1.2)',bn:5,w:{chi:1.2}},a:{uq:31.9,m:29.2,lq:28.5}},
-{code:'JS4032',nm:'英文',fac:'文學院',f:{d:'Best 5 (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:27.5,m:27.25,lq:26.5}},
+{code:'JS4032',nm:'英文',fac:'文學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:27.5,m:27.25,lq:26.5}},
 {code:'JS4044',nm:'藝術',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:28.0,m:26.0,lq:24.5}},
 {code:'JS4056',nm:'歷史',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:28.0,m:26.0,lq:26.0}},
-{code:'JS4070',nm:'語言學',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:27.5,m:24.5,lq:24.5}},
-{code:'JS4082',nm:'音樂',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:25.0,m:24.5,lq:22.5}},
-{code:'JS4094',nm:'哲學',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:24.5,m:24.5,lq:23.0}},
+{code:'JS4070',nm:'語言學',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:27.5,m:24.5,lq:24.5}},
+{code:'JS4082',nm:'音樂',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:25.0,m:24.5,lq:22.5}},
+{code:'JS4094',nm:'哲學',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5,inc:['chi','eng']},a:{uq:24.5,m:24.5,lq:23.0}},
 {code:'JS4100',nm:'公共人文學',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:24.5,m:23.0,lq:22.0}},
 {code:'JS4109',nm:'宗教研究',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:26.0,m:21.5,lq:21.0}},
 {code:'JS4111',nm:'神學',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
-{code:'JS4123',nm:'翻譯',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:24.75,m:23.0,lq:23.0}},
+{code:'JS4123',nm:'翻譯',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:24.75,m:23.0,lq:23.0}},
 {code:'JS4136',nm:'中國研究',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:27.5,m:24.25,lq:24.25}},
 {code:'JS4202',nm:'工商管理學士綜合課程',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:41.0,m:26.0,lq:26.0}},
 {code:'JS4214',nm:'環球商業學',fac:'商學院',f:{d:'Best 5 (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{eng:1.25,math:1.5,m1:1.5,m2:1.5,chem:1.25,phy:1.25,econ:1.25,ict:1.25}},a:{uq:41.0,m:36.5,lq:24.5}},
@@ -345,8 +328,8 @@ var UNI=[
 {code:'JS4238',nm:'保險、金融與精算學',fac:'商學院',f:{d:'Best 5 (Eng×2, Math×2, M1×1.5...)',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5,chem:1.5,phy:1.5,econ:1.5}},a:{uq:42.5,m:40.25,lq:27.5}},
 {code:'JS4240',nm:'專業會計學',fac:'商學院',f:{d:'Best 5 (Eng×2)',bn:5,w:{eng:2}},a:{uq:54.75,m:26.0,lq:26.0}},
 {code:'JS4252',nm:'計量金融學',fac:'商學院',f:{d:'Best 5 (Eng×2, Math×2, M1×1.5...)',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5,chem:1.5,phy:1.5,econ:1.5}},a:{uq:54.75,m:51.75,lq:35.0}},
-{code:'JS4254',nm:'環球經濟與金融跨學科主修課程',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:35.0,m:35.0,lq:33.5}},
-{code:'JS4264',nm:'工商管理學士（工商管理學士綜合課程）及法律博士雙學位課程',fac:'商學院',f:{d:'Best 5 (Eng×2)',bn:5,w:{eng:2}},a:{uq:37.5,m:37.5,lq:36.0}},
+{code:'JS4254',nm:'環球經濟與金融跨學科主修課程',fac:'商學院',f:{d:'Best 5',bn:5,inc:['eng']},a:{uq:35.0,m:35.0,lq:33.5}},
+{code:'JS4264',nm:'工商管理學士（工商管理學士綜合課程）及法律博士雙學位課程',fac:'商學院',f:{d:'Best 5 (Eng×2)',bn:5,w:{eng:2},inc:['chi','eng','math']},a:{uq:37.5,m:37.5,lq:36.0}},
 {code:'JS4276',nm:'計量金融學及風險管理科學',fac:'商學院',f:{d:'Best 5',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5,chem:1.5,phy:1.5,econ:1.5}},a:{uq:63.75,m:57.75,lq:54.75}},
 {code:'JS4725',nm:'生物科技、創業與醫療管理',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:37.0,m:27.5,lq:27.5}},
 {code:'JS4320',nm:'人體運動科學與健康研究',fac:'教育學院',f:{d:'Best 5',bn:5},a:{uq:27.5,m:26.0,lq:24.5}},
@@ -364,23 +347,23 @@ var UNI=[
 {code:'JS4468',nm:'人工智能：系統與科技',fac:'工學院',f:{d:'Best 5',bn:5,w:{eng:1.25,chi:1.25,math:1.75,m1:1.75,m2:1.75,bio:1.5,chem:1.5,phy:1.5,ict:1.5}},a:{uq:55.75,m:52.375,lq:50.375}},
 {code:'JS4470',nm:'材料科學與工程學',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:1.25,m1:1.25,m2:1.25,chem:1.25,phy:1.25}},a:{uq:26.875,m:26.375,lq:24.625}},
 {code:'JS4733',nm:'數學與信息工程學',fac:'工學院',f:{d:'Best 5',bn:5,w:{math:2,m1:2,m2:2,bio:1.5,chem:1.5,phy:1.5,ict:1.5}},a:{uq:65.0,m:63.5,lq:52.0}},
-{code:'JS4903',nm:'法學士',fac:'法律學院',f:{d:'Best 5 (Eng×2)',bn:5,w:{eng:2}},a:{uq:36.0,m:36.0,lq:34.5}},
-{code:'JS4501',nm:'內外全科醫學士',fac:'醫學院',f:{leg:true,d:'Best 5/6',bn:5},a:{uq:38.0,m:37.0,lq:36.0}},
-{code:'JS4502',nm:'內外全科醫學士課程環球醫學領袖培訓專修組別',fac:'醫學院',f:{leg:true,d:'Best 5/6',bn:5},a:{uq:41.5,m:40.5,lq:40.0}},
+{code:'JS4903',nm:'法學士',fac:'法律學院',f:{d:'Best 5 (Eng×2)',bn:5,w:{eng:2},inc:['chi','eng','math']},a:{uq:36.0,m:36.0,lq:34.5}},
+{code:'JS4501',nm:'內外全科醫學士',fac:'醫學院',f:{catb:'no',leg:true,d:'6 Graded Subjects',bn:6,inc:['chi','eng','math']},a:{uq:38.0,m:37.0,lq:36.0}},
+{code:'JS4502',nm:'內外全科醫學士課程環球醫學領袖培訓專修組別',fac:'醫學院',f:{catb:'no',leg:true,d:'6 Graded Subjects',bn:6,inc:['chi','eng','math']},a:{uq:41.5,m:40.5,lq:40.0}},
 {code:'JS4513',nm:'護理學',fac:'醫學院',f:{d:'Best 5 (Bio×1.2, Chem×1.2, Phy×1.2)',bn:5,w:{bio:1.2,chem:1.2,phy:1.2}},a:{uq:30.1,m:28.6,lq:28.3}},
-{code:'JS4525',nm:'藥劑學',fac:'醫學院',f:{d:'Best 5',bn:5},a:{uq:33.5,m:32.0,lq:30.5}},
+{code:'JS4525',nm:'藥劑學',fac:'醫學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:33.5,m:32.0,lq:30.5}},
 {code:'JS4537',nm:'公共衞生',fac:'醫學院',f:{d:'Best 5 (Eng×1.5, Math×1.5, Bio×1.5...)',bn:5,w:{eng:1.5,math:1.5,bio:1.5,chem:1.5,econ:1.5}},a:{uq:36.5,m:32.75,lq:32.5}},
 {code:'JS4542',nm:'中醫學',fac:'醫學院',f:{d:'Best 5',bn:5},a:{uq:30.5,m:30.5,lq:29.0}},
-{code:'JS4550',nm:'生物醫學',fac:'醫學院',f:{d:'Best 5 (Eng×1.5, Bio×1.5, Chem×1.5)',bn:5,w:{eng:1.5,bio:1.5,chem:1.5}},a:{uq:42.5,m:41.0,lq:39.5}},
+{code:'JS4550',nm:'生物醫學',fac:'醫學院',f:{d:'Best 5 (Eng×1.5, Bio×1.5, Chem×1.5)',bn:5,w:{eng:1.5,bio:1.5,chem:1.5},inc:['chi','eng','math']},a:{uq:42.5,m:41.0,lq:39.5}},
 {code:'JS4601',nm:'理學',fac:'理學院',f:{d:'Best 5 (M1×2, M2×2, Bio×2...)',bn:5,w:{m1:2,m2:2,bio:2,chem:2,phy:2,econ:1.5,geog:1.5,ict:1.5}},a:{uq:40.5,m:37.75,lq:36.0}},
-{code:'JS4648',nm:'地球與環境科學',fac:'理學院',f:{d:'Best 5 (Eng×2, Math×2, M1×2...)',bn:5,w:{eng:2,math:2,m1:2,m2:2,bio:2,chem:2,phy:2,geog:1.5}},a:{uq:52.0,m:47.0,lq:45.0}},
+{code:'JS4648',nm:'地球與環境科學',fac:'理學院',f:{catb:'no',d:'Best 5 (Eng×2, Math×2, M1×2...)',bn:5,w:{eng:2,math:2,m1:2,m2:2,bio:2,chem:2,phy:2,geog:1.5}},a:{uq:52.0,m:47.0,lq:45.0}},
 {code:'JS4682',nm:'數學精研',fac:'理學院',f:{d:'Best 5 (M1×3.5, M2×3.5)',bn:5,w:{m1:3.5,m2:3.5}},a:{uq:57.75,m:52.5,lq:51.75}},
-{code:'JS4690',nm:'理論物理精研',fac:'理學院',f:{d:'Best 5 (Phy×2, Math×1.5, M1×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,phy:2}},a:{uq:52.75,m:46.75,lq:43.0}},
+{code:'JS4690',nm:'理論物理精研',fac:'理學院',f:{catb:'no',d:'Best 5 (Phy×2, Math×1.5, M1×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,phy:2}},a:{uq:52.75,m:46.75,lq:43.0}},
 {code:'JS4719',nm:'風險管理科學',fac:'理學院',f:{d:'Best 5 (Math×2, M1×2, M2×2)',bn:5,w:{math:2,m1:2,m2:2}},a:{uq:44.5,m:43.0,lq:41.5}},
 {code:'JS4750',nm:'航天科學與地球信息學及X雙主修課程',fac:'理學院',f:{d:'Best 5 (M1×2, M2×2, Phy×2...)',bn:5,w:{math:1.5,m1:2,m2:2,phy:2,geog:2}},a:{uq:48.0,m:44.25,lq:38.25}},
 {code:'JS4760',nm:'跨學科數據分析及X雙主修課程',fac:'商學院',f:{d:'Best 5 (M1×2, M2×2, Math×1.5...)',bn:5,w:{math:1.5,m1:2,m2:2,econ:1.5,ict:1.5}},a:{uq:37.0,m:35.0,lq:34.75}},
 {code:'JS4801',nm:'社會科學（大類收生）',fac:'理學院',f:{d:'Best 5 (Eng×1.3)',bn:5,w:{eng:1.3}},a:{uq:28.7,m:27.65,lq:26.6}},
-{code:'JS4812',nm:'建築學',fac:'理學院',f:{d:'Best 5 (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:28.0,m:28.0,lq:26.5}},
+{code:'JS4812',nm:'建築學',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:28.0,m:28.0,lq:26.5}},
 {code:'JS4824',nm:'經濟學',fac:'理學院',f:{d:'Best 5',bn:5,w:{math:1.5,m1:1.5,m2:1.5,chem:1.5,econ:1.5,phy:1.5}},a:{uq:33.75,m:31.5,lq:30.75}},
 {code:'JS4836',nm:'地理與資源管理學',fac:'理學院',f:{d:'Best 5 (Eng×1.5, Geog×1.5)',bn:5,w:{eng:1.5,geog:1.5}},a:{uq:35.25,m:33.0,lq:31.5}},
 {code:'JS4838',nm:'城市研究',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:26.0,m:26.0,lq:24.5}},
@@ -389,110 +372,110 @@ var UNI=[
 {code:'JS4858',nm:'全球傳播',fac:'理學院',f:{d:'Best 5',bn:5,w:{eng:1.3}},a:{uq:31.55,m:29.15,lq:27.2}},
 {code:'JS4862',nm:'心理學',fac:'理學院',f:{d:'Best 5 (Eng×1.5, Math×1.5)',bn:5,w:{eng:1.5,math:1.5}},a:{uq:36.75,m:33.75,lq:32.25}},
 {code:'JS4874',nm:'社會工作',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:29.0,m:27.5,lq:27.5}},
-{code:'JS4886',nm:'社會學',fac:'理學院',f:{d:'Best 5 (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:28.0,m:26.5,lq:26.5}},
-{code:'JS4892',nm:'全球研究',fac:'理學院',f:{d:'Best 5 (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:26.5,m:26.5,lq:25.75}},
+{code:'JS4886',nm:'社會學',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:28.0,m:26.5,lq:26.5}},
+{code:'JS4892',nm:'全球研究',fac:'理學院',f:{d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:26.5,m:26.5,lq:25.75}},
 {code:'JS4893',nm:'數據科學與政策研究',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:24.5,m:23.5,lq:23.0}},
 {code:'JS4068',nm:'Japanese Studies',fac:'Faculty of Arts',f:{d:'Best 5',bn:5},a:{uq:24.5,m:24.5,lq:23.0}},
-{code:'JS4331',nm:'BA (Chinese Language Studies) and BEd (Chinese Language Education)',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{chi:2}},a:{uq:null,m:null,lq:null}},
-{code:'JS4343',nm:'BA (English Studies) and BEd (English Language Education)',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{eng:2}},a:{uq:null,m:null,lq:null}},
-{code:'JS4361',nm:'BEd in Mathematics and Mathematics Education',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{math:2,m1:2,chi:1.5,eng:1.5,phy:1.5,econ:1.5,ict:1.5}},a:{uq:57.5,m:53.75,lq:53.0}},
+{code:'JS4331',nm:'BA (Chinese Language Studies) and BEd (Chinese Language Education)',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{chi:2},inc:['chi']},a:{uq:null,m:null,lq:null}},
+{code:'JS4343',nm:'BA (English Studies) and BEd (English Language Education)',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{eng:2},inc:['eng']},a:{uq:null,m:null,lq:null}},
+{code:'JS4361',nm:'BEd in Mathematics and Mathematics Education',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{math:2,m1:2,chi:1.5,eng:1.5,phy:1.5,econ:1.5,ict:1.5},inc:['math']},a:{uq:57.5,m:53.75,lq:53.0}},
 {code:'JS4386',nm:'BSc in Learning Design and Technology',fac:'Faculty of Education',f:{d:'Best 5',bn:5,w:{math:1.5,m1:1.5,bio:1.5,chem:1.5,phy:1.5,dat:1.5,ict:1.5,bafs:1.5,econ:1.5,geog:1.5,tl:1.5}},a:{uq:31.75,m:30.5,lq:30.25}}
 ]},
 {id:'hkust',s:'HKUST',n:'香港科技大學',c:'#003366',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:4,N2:3,N3:3,G6:4,G5:3,G4:3,G3:3,C2:4,C1:3,B2:3,B1:3,A2:3},p:[
-{code:'JS5101',nm:'國際科研',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:38.25,lq:37.88}},
-{code:'JS5102',nm:'理學A組',fac:'理學院',f:{d:'Best 5 (Eng×1.5,Bio×2,Chem×2)',bn:5,w:{eng:1.5,bio:2,chem:2}},a:{uq:null,m:33.13,lq:32.63}},
-{code:'JS5103',nm:'理學B組',fac:'理學院',f:{d:'Best 5 (Math×1.5,Phy×2)',bn:5,w:{math:1.5,phy:2}},a:{uq:null,m:33.38,lq:32.75}},
-{code:'JS5118',nm:'理學士(生物醫學及健康科學)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:43.13,lq:40.5}},
-{code:'JS5181',nm:'理學A組(人工智能延伸主修)',fac:'理學院',f:{d:'Best 5 (Eng×1.5,Bio×2,Chem×2)',bn:5,w:{eng:1.5,bio:2,chem:2}},a:{uq:null,m:37.5,lq:36.0}},
-{code:'JS5212',nm:'工學士(計算機工程)',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:46.0,lq:44.0}},
-{code:'JS5220',nm:'化學及生物工程學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:44.0,lq:41.0}},
-{code:'JS5230',nm:'土木及環境工程學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:39.7,lq:38.2}},
-{code:'JS5240',nm:'計算機科學及工程學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:50.0,lq:48.0}},
-{code:'JS5250',nm:'電子及計算機工程學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:44.0,lq:42.0}},
-{code:'JS5260',nm:'工業工程及決策分析學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:36.28,lq:35.1}},
-{code:'JS5270',nm:'機械及航空航天工程學系',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:41.14,lq:39.72}},
-{code:'JS5282',nm:'工程學(人工智能延伸主修)',fac:'工學院',f:{d:'Best 5',bn:5},a:{uq:null,m:46.0,lq:37.0}},
-{code:'JS5300',nm:'工商管理',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:35.0,lq:33.9}},
-{code:'JS5311',nm:'工商管理學士(經濟學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:36.55,lq:35.4}},
-{code:'JS5312',nm:'工商管理學士(金融學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2,Chem×1.5)',bn:5,w:{eng:2,math:2,chem:1.5}},a:{uq:null,m:43.31,lq:41.81}},
-{code:'JS5313',nm:'工商管理學士(環球商業管理)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:52.43,lq:50.4}},
-{code:'JS5314',nm:'工商管理學士(資訊系統)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:35.93,lq:35.4}},
-{code:'JS5315',nm:'工商管理學士(管理學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:33.9,lq:33.9}},
-{code:'JS5316',nm:'工商管理學士(市場學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:32.55,lq:32.4}},
-{code:'JS5317',nm:'工商管理學士(營運管理學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:32.4,lq:32.05}},
-{code:'JS5318',nm:'工商管理學士(專業會計學)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:34.05,lq:33.55}},
-{code:'JS5331',nm:'理學士(經濟及金融)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2,Chem×1.5)',bn:5,w:{eng:2,math:2,chem:1.5}},a:{uq:null,m:48.19,lq:46.5}},
-{code:'JS5332',nm:'理學士(計量金融)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2,Chem×1.5)',bn:5,w:{eng:2,math:2,chem:1.5}},a:{uq:null,m:58.13,lq:56.06}},
-{code:'JS5411',nm:'理學士(環球中國研究)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:29.23,lq:28.8}},
-{code:'JS5412',nm:'理學士(定量社會分析)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:33.0,lq:32.5}},
-{code:'JS5711',nm:'理學士(創新、設計與科技)',fac:'Academy of…',f:{d:'Best 5',bn:5},a:{uq:null,m:36.36,lq:34.72}},
-{code:'JS5811',nm:'理學士(生物科技及商學)',fac:'Academy of…',f:{d:'Best 5',bn:5},a:{uq:null,m:38.63,lq:36.56}},
-{code:'JS5812',nm:'理學士(環境管理及科技)',fac:'Academy of…',f:{d:'Best 5',bn:5},a:{uq:null,m:32.5,lq:31.05}},
-{code:'JS5813',nm:'理學士(數學與經濟)',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:44.1,lq:39.2}},
-{code:'JS5814',nm:'理學士(風險管理及商業智能)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2,M1×1.5...)',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5}},a:{uq:null,m:44.25,lq:43.5}},
-{code:'JS5822',nm:'理學士(可持續及綠色金融)',fac:'商學院',f:{d:'Best 5 (Eng×2,Math×2,Chem×1.5)',bn:5,w:{eng:2,math:2,chem:1.5}},a:{uq:null,m:37.13,lq:36.0}},
-{code:'JS5901',nm:'科技及管理學雙學位課程',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:62.48,lq:60.23}}
+{code:'JS5101',nm:'國際科研',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng+Math+Best 2 from Bio/Chem/Phy/M1/M2)',bn:5,bonus6:true,bonusW:0.25},a:{uq:null,m:38.25,lq:37.88}},
+{code:'JS5102',nm:'理學A組',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng×1.5, Phy/M1/M2×2, Bio/Chem×1.5)',bn:5,w:{eng:1.5,phy:2,m1:2,m2:2,bio:1.5,chem:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:33.13,lq:32.63}},
+{code:'JS5103',nm:'理學B組',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng×1.5, Bio/Chem×2, Phy/M1/M2×1.5)',bn:5,w:{eng:1.5,bio:2,chem:2,phy:1.5,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:33.38,lq:32.75}},
+{code:'JS5118',nm:'理學士(生物醫學及健康科學)',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5,bonus6:true,bonusW:0.25},a:{uq:null,m:43.13,lq:40.5}},
+{code:'JS5181',nm:'理學A組(人工智能延伸主修)',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng×1.5, Phy/M1/M2×2, Bio/Chem×1.5)',bn:5,w:{eng:1.5,phy:2,m1:2,m2:2,bio:1.5,chem:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:37.5,lq:36.0}},
+{code:'JS5212',nm:'工學士(計算機工程)',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Phy×2,ICT×1.5; M1/M2×2)',bn:5,w:{eng:2,math:2,phy:2,ict:1.5,m1:2,m2:2},bonus6:true,bonusW:0.45},a:{uq:null,m:46.0,lq:44.0}},
+{code:'JS5220',nm:'化學及生物工程學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy×2,ICT×1.5; M1/M2×2)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,ict:1.5,m1:2,m2:2},bonus6:true,bonusW:0.5},a:{uq:null,m:44.0,lq:41.0}},
+{code:'JS5230',nm:'土木及環境工程學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Chem/Phy×2,ICT×1.5; M1/M2×2)',bn:5,w:{eng:2,math:2,chem:2,phy:2,ict:1.5,m1:2,m2:2},bonus6:true,bonusW:0.45},a:{uq:null,m:39.7,lq:38.2}},
+{code:'JS5240',nm:'計算機科學及工程學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Phy×2,ICT×1.5; M1/M2×2)',bn:5,w:{eng:2,math:2,phy:2,ict:1.5,m1:2,m2:2},bonus6:true,bonusW:0.45},a:{uq:null,m:50.0,lq:48.0}},
+{code:'JS5250',nm:'電子及計算機工程學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Phy×2,ICT×1.5; M1/M2×2)',bn:5,w:{eng:2,math:2,phy:2,ict:1.5,m1:2,m2:2},bonus6:true,bonusW:0.45},a:{uq:null,m:44.0,lq:42.0}},
+{code:'JS5260',nm:'工業工程及決策分析學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy×2; M1/M2×1.5)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.425},a:{uq:null,m:36.28,lq:35.1}},
+{code:'JS5270',nm:'機械及航空航天工程學系',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy×2; M1/M2×1.5)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.425},a:{uq:null,m:41.14,lq:39.72}},
+{code:'JS5282',nm:'工程學(人工智能延伸主修)',fac:'工學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy×2; M1/M2×1.5)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.425},a:{uq:null,m:46.0,lq:37.0}},
+{code:'JS5300',nm:'工商管理',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:35.0,lq:33.9}},
+{code:'JS5311',nm:'工商管理學士(經濟學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:36.55,lq:35.4}},
+{code:'JS5312',nm:'工商管理學士(金融學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Chem/Econ/Phy/M1/M2×1.5)',bn:5,w:{eng:2,math:2,chem:1.5,econ:1.5,phy:1.5,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:43.31,lq:41.81}},
+{code:'JS5313',nm:'工商管理學士(環球商業管理)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:52.43,lq:50.4}},
+{code:'JS5314',nm:'工商管理學士(資訊系統)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:35.93,lq:35.4}},
+{code:'JS5315',nm:'工商管理學士(管理學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:33.9,lq:33.9}},
+{code:'JS5316',nm:'工商管理學士(市場學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:32.55,lq:32.4}},
+{code:'JS5317',nm:'工商管理學士(營運管理學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:32.4,lq:32.05}},
+{code:'JS5318',nm:'工商管理學士(專業會計學)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:34.05,lq:33.55}},
+{code:'JS5331',nm:'理學士(經濟及金融)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Chem/Econ/Phy/M1/M2×1.5)',bn:5,w:{eng:2,math:2,chem:1.5,econ:1.5,phy:1.5,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:48.19,lq:46.5}},
+{code:'JS5332',nm:'理學士(計量金融)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Chem/Econ/Phy/M1/M2×1.5)',bn:5,w:{eng:2,math:2,chem:1.5,econ:1.5,phy:1.5,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:58.13,lq:56.06}},
+{code:'JS5411',nm:'理學士(環球中國研究)',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng×2,Chi×1.5)',bn:5,w:{eng:2,chi:1.5},bonus6:true,bonusW:0.325},a:{uq:null,m:29.23,lq:28.8}},
+{code:'JS5412',nm:'理學士(定量社會分析)',fac:'理學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, M1/M2×1.5)',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:33.0,lq:32.5}},
+{code:'JS5711',nm:'理學士(創新、設計與科技)',fac:'Academy of…',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy/DAT×2; M1/M2×1.5)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,dat:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.425},a:{uq:null,m:36.36,lq:34.72}},
+{code:'JS5811',nm:'理學士(生物科技及商學)',fac:'Academy of…',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem×1.5)',bn:5,w:{eng:2,math:2,bio:1.5,chem:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:38.63,lq:36.56}},
+{code:'JS5812',nm:'理學士(環境管理及科技)',fac:'Academy of…',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2)',bn:5,w:{eng:2,math:2},bonus6:true,bonusW:0.35},a:{uq:null,m:32.5,lq:31.05}},
+{code:'JS5813',nm:'理學士(數學與經濟)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, M1/M2×2, Bio/Chem/Phy/Econ×1.5)',bn:5,w:{eng:2,math:2,m1:2,m2:2,bio:1.5,chem:1.5,phy:1.5,econ:1.5},bonus6:true,bonusW:0.4},a:{uq:null,m:44.1,lq:39.2}},
+{code:'JS5814',nm:'理學士(風險管理及商業智能)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, M1/M2×1.5)',bn:5,w:{eng:2,math:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:44.25,lq:43.5}},
+{code:'JS5822',nm:'理學士(可持續及綠色金融)',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Chem/Econ/Phy/M1/M2×1.5)',bn:5,w:{eng:2,math:2,chem:1.5,econ:1.5,phy:1.5,m1:1.5,m2:1.5},bonus6:true,bonusW:0.375},a:{uq:null,m:37.13,lq:36.0}},
+{code:'JS5901',nm:'科技及管理學雙學位課程',fac:'商學院',f:{catb:'yes',d:'Best 5 (Eng×2,Math×2, Bio/Chem/Phy×2; M1/M2×1.5)',bn:5,w:{eng:2,math:2,bio:2,chem:2,phy:2,m1:1.5,m2:1.5},bonus6:true,bonusW:0.425},a:{uq:null,m:62.48,lq:60.23}}
 ]},
-{id:'cityu',s:'CityU',n:'香港城市大學',c:'#a51e2d',cbr:'never',cbp:{},ccr:'count',ccp:{N1:7,N2:5.5,N3:4,G6:7,G5:5.5,G4:4,G3:3,C2:7,C1:5.5,B2:4,B1:3,A2:3},p:[
-{code:'JS1000',nm:'理學士(計算金融及金融科技)',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:24.5,lq:23.5}},
-{code:'JS1001',nm:'工商管理學士(環球商業)',fac:'商學院',f:{d:'Best 5 subjects (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:null,m:22.0,lq:21.5}},
-{code:'JS1002',nm:'工商管理學士(會計學)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:22.0,lq:21.5}},
-{code:'JS1005',nm:'工商管理學士(管理學)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:22.0,lq:21.5}},
-{code:'JS1007',nm:'工商管理學士(市場營銷)',fac:'商學院',f:{d:'Best 5 subjects (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:null,m:24.5,lq:23.5}},
-{code:'JS1012',nm:'經濟及金融',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:22.5}},
-{code:'JS1013',nm:'工商管理學士(商業經濟)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:22.0,lq:21.5}},
-{code:'JS1014',nm:'工商管理學士(金融)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.5,lq:21.5}},
-{code:'JS1017',nm:'資訊系統',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.0,lq:20.5}},
-{code:'JS1018',nm:'工商管理學士(環球商業系統管理)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:24.0,lq:23.5}},
-{code:'JS1019',nm:'工商管理學士(資訊管理)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.5,lq:21.0}},
-{code:'JS1026',nm:'工商管理學士(商業決策分析)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.5,lq:21.0}},
-{code:'JS1027',nm:'工商管理學士(環球營運管理)',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.5,lq:21.0}},
-{code:'JS1040',nm:'創意藝術及科技卓越計劃(CREATE)',fac:'School of …',f:{d:'Best 5 subjects (Eng×2)',bn:5,w:{eng:2}},a:{uq:null,m:25.5,lq:25.0}},
-{code:'JS1041',nm:'創意媒體',fac:'School of …',f:{d:'Best 5 subjects (Eng×2)',bn:5,w:{eng:2}},a:{uq:null,m:25.5,lq:25.0}},
-{code:'JS1042',nm:'文學士(創意媒體)',fac:'School of …',f:{d:'Best 5 subjects (Eng×2)',bn:5,w:{eng:2}},a:{uq:null,m:27.5,lq:27.0}},
-{code:'JS1043',nm:'理學士(創意媒體)',fac:'School of …',f:{d:'Best 5 subjects (Eng×2, Math×1.5)',bn:5,w:{eng:2,math:1.5}},a:{uq:null,m:26.5,lq:25.5}},
-{code:'JS1044',nm:'文理學士(新媒體)',fac:'School of …',f:{d:'Best 5 subjects (Eng×2)',bn:5,w:{eng:2}},a:{uq:null,m:24.0,lq:24.0}},
-{code:'JS1050',nm:'國際可持續發展創新研究及創業計劃(INSPIRE)',fac:'School of …',f:{d:'Best 5 subjects (Math×2.5, Bio×2.5, Chem×2.5...)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:38.0,lq:36.5}},
-{code:'JS1051',nm:'能源及環境',fac:'School of …',f:{d:'Best 5 subjects (Math×2.5, Bio×2.5, Chem×2.5...)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:40.5,lq:40.0}},
-{code:'JS1052',nm:'工學士(環境科學及工程) 及 工商管理學士(金融) 雙學位',fac:'School of …',f:{d:'Best 5 subjects (Math×2.5, Bio×2.5, Chem×2.5...)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:40.0,lq:39.5}},
-{code:'JS1053',nm:'理學士(環境及可持續商業)',fac:'School of …',f:{d:'Best 5 subjects (Math×2.5, Bio×2.5, Chem×2.5...)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,econ:2.5,bafs:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:23.0,lq:21.5}},
-{code:'JS1061',nm:'法學士',fac:'法律學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:21.5}},
-{code:'JS1062',nm:'法學士 及 工商管理學士(會計學) 雙學位',fac:'商學院',f:{d:'Best 5 subjects (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:null,m:29.0,lq:25.0}},
-{code:'JS1070',nm:'數據賦能(DELTA)',fac:'計算科學院',f:{d:'Best 5 subjects (Eng×2, Math×2)',bn:5,w:{eng:2,math:2}},a:{uq:null,m:31.0,lq:30.0}},
-{code:'JS1071',nm:'數據科學',fac:'計算科學院',f:{d:'Best 5 subjects (Math×2, Eng×1.5)',bn:5,w:{math:2,eng:1.5}},a:{uq:null,m:27.5,lq:27.5}},
-{code:'JS1072',nm:'理學士(數據科學)',fac:'計算科學院',f:{d:'Best 5 subjects (Math×2, Eng×1.5)',bn:5,w:{math:2,eng:1.5}},a:{uq:null,m:29.0,lq:28.5}},
-{code:'JS1074',nm:'理學士(數據及系統工程)',fac:'計算科學院',f:{d:'Best 5 subjects (Math×2, Eng×1.5)',bn:5,w:{math:2,eng:1.5}},a:{uq:null,m:28.0,lq:27.5}},
-{code:'JS1100',nm:'社會科學學士(心理學) [WE-CARE]',fac:'文學院',f:{d:'Best 4 subjects (include English)',bn:5,w:{eng:2}},a:{uq:null,m:null,lq:null}},
-{code:'JS1102',nm:'社會科學學士(國際關係及環球事務)',fac:'文學院',f:{d:'Best 5 subjects (include English)',bn:5,w:{eng:1.5}},a:{uq:null,m:24.0,lq:23.5}},
-{code:'JS1103',nm:'文學士(中文及歷史)',fac:'文學院',f:{d:'3 core + 2 elective subjects',bn:5,w:{eng:2,chi:2,hist:1.5,va:1.5}},a:{uq:null,m:36.0,lq:35.5}},
-{code:'JS1104',nm:'文學士(英語)',fac:'文學院',f:{d:'Best 5 subjects (include English)',bn:5,w:{eng:2.5}},a:{uq:null,m:32.0,lq:29.5}},
-{code:'JS1106',nm:'媒體與傳播',fac:'文學院',f:{d:'Best 4 subjects (include English)',bn:5,w:{eng:1.25,chi:1.25}},a:{uq:null,m:20.5,lq:20.0}},
-{code:'JS1108',nm:'社會科學學士(公共事務及管理)',fac:'文學院',f:{d:'3 core + 2 elective subjects',bn:5,w:{eng:1.5}},a:{uq:null,m:23.5,lq:23.0}},
-{code:'JS1109',nm:'文學士(語言學及語言應用)',fac:'文學院',f:{d:'3 core + 2 elective subjects',bn:5,w:{eng:2,chi:1.5,math:1.5}},a:{uq:null,m:30.0,lq:29.5}},
-{code:'JS1111',nm:'社會科學學士(犯罪科學)',fac:'文學院',f:{d:'Best 4 subjects (include English)',bn:5,w:{eng:2}},a:{uq:null,m:24.5,lq:24.0}},
-{code:'JS1112',nm:'社會科學學士(心理學)',fac:'文學院',f:{d:'Best 4 subjects (include English)',bn:5,w:{eng:2}},a:{uq:null,m:24.5,lq:24.0}},
-{code:'JS1113',nm:'社會科學學士(社會工作)',fac:'文學院',f:{d:'Best 4 subjects (include English)',bn:5,w:{eng:2}},a:{uq:null,m:23.0,lq:23.0}},
-{code:'JS1123',nm:'社會科學學士(犯罪科學) 及 法學士 雙學位',fac:'文學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:24.5,lq:23.0}},
-{code:'JS1200',nm:'環球研究及科技創業(GREAT)',fac:'理學院',f:{d:'Best 5 subjects (Chem×2.5, M2×2.5, Phy×2.5...)',bn:5,w:{chem:2.5,m2:2.5,phy:2.5,eng:2,math:2,m1:2,bio:1.5,econ:1.5}},a:{uq:null,m:37.0,lq:36.5}},
-{code:'JS1201',nm:'建築及土木工程',fac:'工學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:43.5,lq:42.5}},
-{code:'JS1202',nm:'理學士(化學)',fac:'理學院',f:{d:'Best 5 subjects (Eng×2, Chem×2, Math×1.5)',bn:5,w:{eng:2,chem:2,math:1.5}},a:{uq:null,m:27.5,lq:27.0}},
-{code:'JS1204',nm:'理學士(電腦科學)',fac:'計算科學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:22.0}},
-{code:'JS1205',nm:'電機工程',fac:'工學院',f:{d:'Best 5 subjects (Eng×2.5, Math×2.5, M1×2.5...)',bn:5,w:{eng:2.5,math:2.5,m1:2.5,m2:2.5,phy:2.5,chi:1.5}},a:{uq:null,m:39.0,lq:37.0}},
-{code:'JS1206',nm:'理學士(計算數學)',fac:'理學院',f:{d:'Best 5 subjects (Math×2.5, M1×2.5, M2×2.5...)',bn:5,w:{math:2.5,m1:2.5,m2:2.5,eng:2,bio:1.5,chem:1.5,phy:1.5}},a:{uq:null,m:37.0,lq:36.0}},
-{code:'JS1207',nm:'機械工程',fac:'工學院',f:{d:'Best 5 subjects (Eng×2, Math×2, Phy×2...)',bn:5,w:{eng:2,math:2,phy:2,chem:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:37.0,lq:34.0}},
-{code:'JS1208',nm:'理學士(物理學)',fac:'理學院',f:{d:'Best 5 subjects (Eng×2, Phy×2, M1×1.5...)',bn:5,w:{eng:2,phy:2,m1:1.5,m2:1.5,math:1.25}},a:{uq:null,m:28.0,lq:27.0}},
-{code:'JS1210',nm:'工學士(材料科學及工程)',fac:'工學院',f:{d:'Best 5 subjects (Math×2, Phy×2, Eng×1.5...)',bn:5,w:{math:2,phy:2,eng:1.5,bio:1.5,chem:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:34.0,lq:32.5}},
-{code:'JS1211',nm:'工學士(生物醫學工程)',fac:'工學院',f:{d:'Best 5 subjects (Eng×2, Math×2, Bio×2...)',bn:5,w:{eng:2,math:2,bio:2,chem:2,m1:2,m2:2,phy:2}},a:{uq:null,m:39.0,lq:38.0}},
-{code:'JS1216',nm:'工學士(智能製造工程)',fac:'工學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:20.0,lq:18.0}},
-{code:'JS1217',nm:'研究、創新及跨國工程途徑(PRIME)',fac:'工學院',f:{d:'Best 5 subjects (Eng×2, Math×2, Bio×2...)',bn:5,w:{eng:2,math:2,bio:2,chem:2,ict:2,m1:2,m2:2,phy:2}},a:{uq:null,m:38.5,lq:38.0}},
-{code:'JS1218',nm:'理學士(網絡安全)',fac:'計算科學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:20.5,lq:20.5}},
-{code:'JS1219',nm:'工學士(創新及企業工程)',fac:'工學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:19.5,lq:18.5}},
-{code:'JS1221',nm:'理學士(電腦科學) 及 理學士(計算金融及金融科技) 雙學位',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:22.0}},
-{code:'JS1801',nm:'獸醫學學士',fac:'醫學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:33.5,lq:32.0}},
-{code:'JS1805',nm:'生物醫學',fac:'醫學院',f:{d:'Best 5 subjects (Eng×2, Bio×2, Chem×2...)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:38.5,lq:37.5}},
-{code:'JS1806',nm:'理學士(生物科學)',fac:'醫學院',f:{d:'Best 5 subjects (Eng×2, Bio×2, Chem×2...)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:35.5,lq:35.0}},
-{code:'JS1807',nm:'理學士(生物醫學)',fac:'醫學院',f:{d:'Best 5 subjects (Eng×2, Bio×2, Chem×2...)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:45.5,lq:43.0}},
-{code:'JS1300',nm:'Integrative Bioscience & Bioengineering Programme (Bio³)',fac:'College of Biomedicine',f:{d:'Best 5',bn:5,w:{eng:2,math:2,bio:2,chem:2,m1:2,phy:2}},a:{uq:null,m:null,lq:null}}
+{id:'cityu',s:'CityU',n:'香港城市大學',c:'#a51e2d',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:7,N2:5.5,N3:4,G6:7,G5:5.5,G4:4,G3:3,C2:7,C1:5.5,B2:4,B1:3,A2:3},p:[
+{code:'JS1000',nm:'理學士(計算金融及金融科技)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math)',bn:5,inc:['eng','math']},a:{uq:null,m:24.5,lq:23.5}},
+{code:'JS1001',nm:'工商管理學士(環球商業)',fac:'商學院',f:{catb:'no',d:'Best 5 subjects (Eng×1.5)',bn:5,w:{eng:1.5}},a:{uq:null,m:22.0,lq:21.5}},
+{code:'JS1002',nm:'工商管理學士(會計學)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:22.0,lq:21.5}},
+{code:'JS1005',nm:'工商管理學士(管理學)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:22.0,lq:21.5}},
+{code:'JS1007',nm:'工商管理學士(市場營銷)',fac:'商學院',f:{catb:'no',d:'Best 5 subjects (Eng×1.5)',bn:5,w:{eng:1.5},inc:['eng','math']},a:{uq:null,m:24.5,lq:23.5}},
+{code:'JS1012',nm:'經濟及金融',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:23.0,lq:22.5}},
+{code:'JS1013',nm:'工商管理學士(商業經濟)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:22.0,lq:21.5}},
+{code:'JS1014',nm:'工商管理學士(金融)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:21.5,lq:21.5}},
+{code:'JS1017',nm:'資訊系統',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:21.0,lq:20.5}},
+{code:'JS1018',nm:'工商管理學士(環球商業系統管理)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math)',bn:5,inc:['eng','math']},a:{uq:null,m:24.0,lq:23.5}},
+{code:'JS1019',nm:'工商管理學士(資訊管理)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:21.5,lq:21.0}},
+{code:'JS1026',nm:'工商管理學士(商業決策分析)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:21.5,lq:21.0}},
+{code:'JS1027',nm:'工商管理學士(環球營運管理)',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math']},a:{uq:null,m:21.5,lq:21.0}},
+{code:'JS1040',nm:'創意藝術及科技卓越計劃(CREATE)',fac:'School of …',f:{catb:['gamedesign','fashion','interior','jewellery','visual','film','digitalmedia','music','pr','socialmedia','psych','electronic','green','robot','auto','aircraft','computer','data','hotel','tourism','analytics'],d:'Best 5 (incl. Eng, Eng×2)',bn:5,w:{eng:2},inc:['eng']},a:{uq:null,m:25.5,lq:25.0}},
+{code:'JS1041',nm:'創意媒體',fac:'School of …',f:{catb:['gamedesign','fashion','interior','jewellery','visual','film','digitalmedia','music','pr','socialmedia','psych','electronic','green','robot','auto','aircraft','computer','data','hotel','tourism','analytics'],d:'Best 5 (incl. Eng, Eng×2)',bn:5,w:{eng:2},inc:['eng']},a:{uq:null,m:25.5,lq:25.0}},
+{code:'JS1042',nm:'文學士(創意媒體)',fac:'School of …',f:{catb:['gamedesign','fashion','interior','jewellery','visual','film','digitalmedia','music','pr','socialmedia','psych','electronic','green','robot','auto','aircraft','computer','data','hotel','tourism','analytics'],d:'Best 5 (incl. Eng, Eng×2)',bn:5,w:{eng:2},inc:['eng']},a:{uq:null,m:27.5,lq:27.0}},
+{code:'JS1043',nm:'理學士(創意媒體)',fac:'School of …',f:{catb:['gamedesign','fashion','interior','jewellery','visual','film','digitalmedia','music','pr','socialmedia','psych','electronic','green','robot','auto','aircraft','computer','data','hotel','tourism','analytics'],d:'Best 5 (incl. Eng+Math, Eng×2,Math×1.5)',bn:5,w:{eng:2,math:1.5},inc:['eng','math']},a:{uq:null,m:26.5,lq:25.5}},
+{code:'JS1044',nm:'文理學士(新媒體)',fac:'School of …',f:{catb:['gamedesign','fashion','interior','jewellery','visual','film','digitalmedia','music','pr','socialmedia','psych','electronic','green','robot','auto','aircraft','computer','data','hotel','tourism','analytics'],d:'Best 5 (incl. Eng, Eng×2)',bn:5,w:{eng:2},inc:['eng']},a:{uq:null,m:24.0,lq:24.0}},
+{code:'JS1050',nm:'國際可持續發展創新研究及創業計劃(INSPIRE)',fac:'School of …',f:{catb:'no',d:'Best 5 (incl. Eng+Math+Bio/Chem/Phy)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5},inc:['eng','math']},a:{uq:null,m:38.0,lq:36.5}},
+{code:'JS1051',nm:'能源及環境',fac:'School of …',f:{catb:'no',d:'Best 5 (incl. Eng+Math+Bio/Chem/Phy)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5},inc:['eng','math']},a:{uq:null,m:40.5,lq:40.0}},
+{code:'JS1052',nm:'工學士(環境科學及工程) 及 工商管理學士(金融) 雙學位',fac:'School of …',f:{catb:'no',d:'Best 5 (incl. Eng+Math+Bio/Chem/Phy)',bn:5,inc:['eng','math'],w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:40.0,lq:39.5}},
+{code:'JS1053',nm:'理學士(環境及可持續商業)',fac:'School of …',f:{catb:'no',d:'Best 5 (incl. Eng+Math+Bio/Chem/Phy)',bn:5,w:{math:2.5,bio:2.5,chem:2.5,phy:2.5,econ:2.5,bafs:2.5,eng:2,geog:1.5,m1:1.5,m2:1.5},inc:['eng','math']},a:{uq:null,m:23.0,lq:21.5}},
+{code:'JS1061',nm:'法學士',fac:'法律學院',f:{catb:'no',d:'Best 5 (incl. Eng)',bn:5,inc:['eng']},a:{uq:null,m:23.0,lq:21.5}},
+{code:'JS1062',nm:'法學士 及 工商管理學士(會計學) 雙學位',fac:'商學院',f:{catb:'no',d:'Best 5 (incl. Eng, Eng×1.5)',bn:5,inc:['eng'],w:{eng:1.5}},a:{uq:null,m:29.0,lq:25.0}},
+{code:'JS1070',nm:'數據賦能(DELTA)',fac:'計算科學院',f:{catb:'no',d:'3 core+2 elective (Eng×2,Math×2)',bn:5,inc:['chi','eng','math'],w:{eng:2,math:2}},a:{uq:null,m:31.0,lq:30.0}},
+{code:'JS1071',nm:'數據科學',fac:'計算科學院',f:{catb:'no',d:'3 core+2 elective (Math×2,Eng×1.5)',bn:5,inc:['chi','eng','math'],w:{math:2,eng:1.5}},a:{uq:null,m:27.5,lq:27.5}},
+{code:'JS1072',nm:'理學士(數據科學)',fac:'計算科學院',f:{catb:'no',d:'3 core+2 elective (Math×2,Eng×1.5)',bn:5,inc:['chi','eng','math'],w:{math:2,eng:1.5}},a:{uq:null,m:29.0,lq:28.5}},
+{code:'JS1074',nm:'理學士(數據及系統工程)',fac:'計算科學院',f:{catb:'no',d:'3 core+2 elective (Math×2,Eng×1.5)',bn:5,inc:['chi','eng','math'],w:{math:2,eng:1.5}},a:{uq:null,m:28.0,lq:27.5}},
+{code:'JS1100',nm:'社會科學學士(心理學) [WE-CARE]',fac:'文學院',f:{catb:'no',d:'Best 4 subjects (include English)',bn:4,w:{eng:2},inc:['eng']},a:{uq:null,m:null,lq:null}},
+{code:'JS1102',nm:'社會科學學士(國際關係及環球事務)',fac:'文學院',f:{catb:'no',d:'Best 5 subjects (include English)',bn:5,w:{eng:1.5},inc:['eng']},a:{uq:null,m:24.0,lq:23.5}},
+{code:'JS1103',nm:'文學士(中文及歷史)',fac:'文學院',f:{catb:'no',d:'3 core + 2 elective subjects',bn:5,w:{eng:2,chi:2,hist:1.5,va:1.5},inc:['chi','eng','math']},a:{uq:null,m:36.0,lq:35.5}},
+{code:'JS1104',nm:'文學士(英語)',fac:'文學院',f:{catb:'no',d:'Best 5 subjects (include English)',bn:5,w:{eng:2.5},inc:['eng']},a:{uq:null,m:32.0,lq:29.5}},
+{code:'JS1106',nm:'媒體與傳播',fac:'文學院',f:{catb:'no',d:'Best 4 subjects (include English)',bn:4,w:{eng:1.25,chi:1.25},inc:['eng']},a:{uq:null,m:20.5,lq:20.0}},
+{code:'JS1108',nm:'社會科學學士(公共事務及管理)',fac:'文學院',f:{catb:'no',d:'3 core + 2 elective subjects',bn:5,w:{eng:1.5},inc:['chi','eng','math']},a:{uq:null,m:23.5,lq:23.0}},
+{code:'JS1109',nm:'文學士(語言學及語言應用)',fac:'文學院',f:{catb:'no',d:'3 core + 2 elective subjects',bn:5,w:{eng:2,chi:1.5,math:1.5},inc:['chi','eng','math']},a:{uq:null,m:30.0,lq:29.5}},
+{code:'JS1111',nm:'社會科學學士(犯罪科學)',fac:'文學院',f:{catb:'no',d:'Best 4 subjects (include English)',bn:4,w:{eng:2},inc:['eng']},a:{uq:null,m:24.5,lq:24.0}},
+{code:'JS1112',nm:'社會科學學士(心理學)',fac:'文學院',f:{catb:'no',d:'Best 4 subjects (include English)',bn:4,w:{eng:2},inc:['eng']},a:{uq:null,m:24.5,lq:24.0}},
+{code:'JS1113',nm:'社會科學學士(社會工作)',fac:'文學院',f:{catb:'no',d:'Best 4 subjects (include English)',bn:4,w:{eng:2},inc:['eng']},a:{uq:null,m:23.0,lq:23.0}},
+{code:'JS1123',nm:'社會科學學士(犯罪科學) 及 法學士 雙學位',fac:'文學院',f:{catb:'no',d:'Best 5 (incl. Eng)',bn:5,inc:['eng']},a:{uq:null,m:24.5,lq:23.0}},
+{code:'JS1200',nm:'環球研究及科技創業(GREAT)',fac:'理學院',f:{catb:'no',d:'Best 4 subjects (Chem×2.5, M2×2.5, Phy×2.5...)',bn:4,w:{chem:2.5,m2:2.5,phy:2.5,eng:2,math:2,m1:2,bio:1.5,econ:1.5}},a:{uq:null,m:37.0,lq:36.5}},
+{code:'JS1201',nm:'建築及土木工程',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Eng)',bn:5,inc:['eng'],w:{eng:2.5,math:2.5,m1:2.5,m2:2.5,phy:2.5,chi:1.5}},a:{uq:null,m:43.5,lq:42.5}},
+{code:'JS1202',nm:'理學士(化學)',fac:'理學院',f:{catb:'no',d:'Best 4 subjects (Eng×2, Chem×2, Math×1.5)',bn:4,w:{eng:2,chem:2,math:1.5}},a:{uq:null,m:27.5,lq:27.0}},
+{code:'JS1204',nm:'理學士(電腦科學)',fac:'計算科學院',f:{catb:'no',d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:22.0}},
+{code:'JS1205',nm:'電機工程',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math)',bn:5,inc:['eng','math'],w:{eng:2,math:2,ict:2,m1:2,m2:2,phy:2,bio:1.5,chem:1.5}},a:{uq:null,m:39.0,lq:37.0}},
+{code:'JS1206',nm:'理學士(計算數學)',fac:'理學院',f:{catb:'no',d:'Best 4 (incl. Math)',bn:4,w:{math:2.5,m1:2,m2:2,eng:2,bio:1.5,chem:1.5,phy:1.5},inc:['math']},a:{uq:null,m:37.0,lq:36.0}},
+{code:'JS1207',nm:'機械工程',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Math)',bn:5,inc:['math'],w:{eng:2,math:2,phy:2,chem:1.5,dat:1.5,m1:1.5,m2:1.5}},a:{uq:null,m:37.0,lq:34.0}},
+{code:'JS1208',nm:'理學士(物理學)',fac:'理學院',f:{catb:'no',d:'Best 4 subjects (Eng×2, Phy×2, M1×1.5...)',bn:4,w:{eng:2,phy:2,m1:1.5,m2:1.5,math:1.25},inc:['math']},a:{uq:null,m:28.0,lq:27.0}},
+{code:'JS1210',nm:'工學士(材料科學及工程)',fac:'工學院',f:{catb:'no',d:'Best 5 subjects (Math×2, Phy×2, Eng×1.5...)',bn:5,w:{math:2,phy:2,eng:1.5,bio:1.5,chem:1.5,m1:1.5,m2:1.5},inc:['math']},a:{uq:null,m:34.0,lq:32.5}},
+{code:'JS1211',nm:'工學士(生物醫學工程)',fac:'工學院',f:{catb:'no',d:'Best 5 subjects (Eng×2, Math×2, Bio×2...)',bn:5,w:{eng:2,math:2,bio:2,chem:2,m1:2,m2:2,phy:2},inc:['chi','eng','math']},a:{uq:null,m:39.0,lq:38.0}},
+{code:'JS1216',nm:'工學士(智能製造工程)',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math)',bn:5,inc:['eng','math']},a:{uq:null,m:20.0,lq:18.0}},
+{code:'JS1217',nm:'研究、創新及跨國工程途徑(PRIME)',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Eng)',bn:5,w:{eng:2,math:2,bio:2,chem:2,dat:2,ict:2,m1:2,m2:2,phy:2},inc:['eng']},a:{uq:null,m:38.5,lq:38.0}},
+{code:'JS1218',nm:'理學士(網絡安全)',fac:'計算科學院',f:{catb:'no',d:'Best 5 subjects',bn:5},a:{uq:null,m:20.5,lq:20.5}},
+{code:'JS1219',nm:'工學士(創新及企業工程)',fac:'工學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math)',bn:5,inc:['eng','math']},a:{uq:null,m:19.5,lq:18.5}},
+{code:'JS1221',nm:'理學士(電腦科學) 及 理學士(計算金融及金融科技) 雙學位',fac:'商學院',f:{catb:'no',d:'Best 5 subjects',bn:5},a:{uq:null,m:23.0,lq:22.0}},
+{code:'JS1801',nm:'獸醫學學士',fac:'醫學院',f:{catb:'no',d:'Best 5 (incl. Eng+Math+Bio+Chem)',bn:5,inc:['eng','math','bio','chem']},a:{uq:null,m:33.5,lq:32.0}},
+{code:'JS1805',nm:'生物醫學',fac:'醫學院',f:{catb:['medsci','healthsci','forensic','sportsci'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5},inc:['chi','eng','math']},a:{uq:null,m:38.5,lq:37.5}},
+{code:'JS1806',nm:'理學士(生物科學)',fac:'醫學院',f:{catb:['medsci','healthsci','forensic','sportsci'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5},inc:['chi','eng','math']},a:{uq:null,m:35.5,lq:35.0}},
+{code:'JS1807',nm:'理學士(生物醫學)',fac:'醫學院',f:{catb:['medsci','healthsci','forensic','sportsci'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5},inc:['chi','eng','math']},a:{uq:null,m:45.5,lq:43.0}},
+{code:'JS1300',nm:'Integrative Bioscience & Bioengineering Programme (Bio³)',fac:'College of Biomedicine',f:{catb:['medsci','healthsci','forensic','sportsci'],inc:['chi','eng','math'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:null,lq:null}},
 ]},
 {id:'polyu',s:'PolyU',n:'香港理工大學',c:'#a4123f',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:8.5,N2:5.5,N3:3,G6:8.5,G5:7,G4:4,G3:3,C2:8.5,C1:7,B2:5.5,B1:4,A2:3},p:[
 {code:'JS3000',nm:'跨學科組合學士課程',fac:'跨學科',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true},a:{uq:null,m:null,lq:null}},
@@ -500,32 +483,32 @@ var UNI=[
 {code:'JS3004',nm:'建設及環境組合學士課程',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','ict'],bonus6:true},a:{uq:null,m:184.0,lq:181.0}},
 {code:'JS3005',nm:'工程學科組合學士課程',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','dat','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiLit','geog','intSci','litEng']},a:{uq:null,m:215.0,lq:205.0}},
 {code:'JS3006',nm:'計算機及數學科學組合學士課程',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:215.0,lq:210.0}},
-{code:'JS3007',nm:'人文學科組合學士課程',fac:'人文學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true},a:{uq:null,m:185.0,lq:179.0}},
+{code:'JS3007',nm:'人文學科組合學士課程',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:185.0,lq:179.0}},
 {code:'JS3008',nm:'理學組合學士課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
 {code:'JS3011',nm:'生物科技及化學科技(榮譽)理學士組合課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math','phy'],w7:['chi','intSci','m1','m2']},a:{uq:null,m:209.0,lq:203.5}},
 {code:'JS3030',nm:'物理學(榮譽)理學士副主修人工智能及數據分析 / 創新及創業',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:215.0,lq:205.0}},
-{code:'JS3060',nm:'會計及金融(榮譽)工商管理學士組合課程 (會計學 / 會…',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:185.5,lq:185.0}},
-{code:'JS3070',nm:'環球商業及物流、航空、航運及供應鏈管理(榮譽)工商管理學…',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:175.0}},
-{code:'JS3080',nm:'管理及市場學(榮譽)工商管理學士組合課程 (管理學 / …',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:182.5,lq:179.0}},
-{code:'JS3130',nm:'空間數據科學及智慧城市(榮譽)理學士組合課程 (土地測量…',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','ict','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','hist','hmsc','litEng','mus','pe','ths','va'],bonus6:true},a:{uq:null,m:206.0,lq:203.0}},
-{code:'JS3140',nm:'航空工程學(榮譽)工學士組合課程 (航空工程學 / 民航…',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bio','chi','intSci']},a:{uq:null,m:210.0,lq:205.0}},
+{code:'JS3060',nm:'會計及金融(榮譽)工商管理學士組合課程 (會計學 / 會計及金融 / 數碼金融及投資學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:185.5,lq:185.0}},
+{code:'JS3070',nm:'環球商業及物流、航空、航運及供應鏈管理(榮譽)工商管理學士組合課程',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:175.0}},
+{code:'JS3080',nm:'管理及市場學(榮譽)工商管理學士組合課程 (管理學 / 市場學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:182.5,lq:179.0}},
+{code:'JS3130',nm:'空間數據科學及智慧城市(榮譽)理學士組合課程 (土地測量及地理資訊學 / 城市信息學及智慧城市)',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','ict','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','hist','hmsc','litEng','mus','pe','ths','va'],bonus6:true},a:{uq:null,m:206.0,lq:203.0}},
+{code:'JS3140',nm:'航空工程學(榮譽)工學士組合課程 (航空工程學 / 民航工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bio','chi','intSci']},a:{uq:null,m:210.0,lq:205.0}},
 {code:'JS3150',nm:'生物醫學工程(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','m1','m2','math','phy'],w7:['chi','eng']},a:{uq:null,m:218.0,lq:213.5}},
 {code:'JS3160',nm:'體育科技(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5 approx.)',bn:5,polyu:true,w10:['eng','math','m1','m2','bio','chem','phy','bafs','econ','ict'],w7:['chi']},a:{uq:null,m:null,lq:null}},
-{code:'JS3170',nm:'電機工程學(榮譽)工學士組合課程 (電機工程學 / 運輸…',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','chiLit','dat','econ','litEng']},a:{uq:null,m:215.0,lq:210.0}},
-{code:'JS3180',nm:'資訊及人工智能工程學(榮譽)工學士 / 理學士組合課程 …',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['chi','dat','intSci']},a:{uq:null,m:null,lq:null}},
+{code:'JS3170',nm:'電機工程學(榮譽)工學士組合課程 (電機工程學 / 運輸系統工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','chiLit','dat','econ','litEng']},a:{uq:null,m:215.0,lq:210.0}},
+{code:'JS3180',nm:'資訊及人工智能工程學(榮譽)工學士/理學士組合課程 (物聯網 / 人工智能 / 資訊安全)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['chi','dat','intSci']},a:{uq:null,m:null,lq:null}},
 {code:'JS3211',nm:'建築科學及工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','geog','hmsc','ict','intSci','m1','m2'],bonus6:true},a:{uq:null,m:181.5,lq:179.5}},
 {code:'JS3214',nm:'建築學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','intSci','litEng','m1','m2','math','mus','phy','ths','va'],bonus6:true},a:{uq:null,m:165.8,lq:163.1}},
-{code:'JS3220',nm:'應用數學及金融分析(榮譽)理學士組合課程 (應用數學 /…',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','combSci','econ','ict','m1','m2','phy']},a:{uq:null,m:193.5,lq:189.5}},
-{code:'JS3223',nm:'數據科學及人工智能(榮譽)理學士組合課程 (數據科學及分…',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:220.0,lq:211.0}},
-{code:'JS3236',nm:'產品創新及智能製造(榮譽)工學士組合課程 (產品創新兼市…',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','dat','econ','intSci']},a:{uq:null,m:195.0,lq:193.0}},
-{code:'JS3237',nm:'智能供應鏈及工程管理(榮譽)理學士組合課程 (智能供應鏈…',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','econ','eng','ict','math'],w7:['bio','chem','chi','combSci_bc','combSci_bp','combSci_pc','dat','geog','intSci','phy']},a:{uq:null,m:195.0,lq:193.0}},
-{code:'JS3240',nm:'英文及應用語言學(榮譽)文學士',fac:'人文學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','chiHist','chiLit','dat','ethics','geog','hist','hmsc','ict','litEng','math','mus','ths','va'],bonus6:true},a:{uq:null,m:178.0,lq:175.0}},
-{code:'JS3242',nm:'言語治療(榮譽)理學士',fac:'人文學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng','math'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','phy','ths'],bonus6:true},a:{uq:null,m:264.3,lq:259.8}},
-{code:'JS3243',nm:'語言科學及技術(榮譽)理學士',fac:'人文學院',f:{d:'Best 5 +6th (×10/×7 approx.)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true},a:{uq:null,m:null,lq:null}},
-{code:'JS3250',nm:'應用社會科學(榮譽)文學士組合課程 (社會工作 / 社會…',fac:'醫社學院',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:171.5,lq:164.5}},
-{code:'JS3255',nm:'食品科學及營養學(榮譽)理學士組合課程 (食品科技與食物…',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math'],w7:['chi','intSci','m1','m2','phy']},a:{uq:null,m:203.0,lq:198.5}},
-{code:'JS3310',nm:'酒店及旅遊管理(榮譽)理學士組合課程 (酒店管理 / 智…',fac:'酒旅學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:166.5,lq:163.0}},
-{code:'JS3320',nm:'中國歷史及文化(榮譽)文學士',fac:'人文學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','chiHist','chiLit','eng','hist'],w7:['math'],bonus6:true},a:{uq:null,m:223.0,lq:210.0}},
+{code:'JS3220',nm:'應用數學及金融分析(榮譽)理學士組合課程 (應用數學 / 投資科學及金融分析 / 量化金融及金融科技)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','combSci','econ','ict','m1','m2','phy']},a:{uq:null,m:193.5,lq:189.5}},
+{code:'JS3223',nm:'數據科學及人工智能(榮譽)理學士組合課程 (數據科學及分析 / 金融科技及人工智能)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:220.0,lq:211.0}},
+{code:'JS3236',nm:'產品創新及智能製造(榮譽)工學士組合課程 (產品創新兼市場學 / 智能製造)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','dat','econ','intSci']},a:{uq:null,m:195.0,lq:193.0}},
+{code:'JS3237',nm:'智能供應鏈及工程管理(榮譽)理學士組合課程 (智能供應鏈 / 工程管理兼數據分析 / 航空營運及系統學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','econ','eng','ict','math'],w7:['bio','chem','chi','combSci_bc','combSci_bp','combSci_pc','dat','geog','intSci','phy']},a:{uq:null,m:195.0,lq:193.0}},
+{code:'JS3240',nm:'英文及應用語言學(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','chiHist','chiLit','dat','ethics','geog','hist','hmsc','ict','litEng','math','mus','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:178.0,lq:175.0}},
+{code:'JS3242',nm:'言語治療(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng','math'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:264.3,lq:259.8}},
+{code:'JS3243',nm:'語言科學及技術(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 +6th (×10/×7)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:null,lq:null}},
+{code:'JS3250',nm:'應用社會科學(榮譽)文學士組合課程 (社會工作 / 社會政策及社會創業)',fac:'醫社學院',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:171.5,lq:164.5}},
+{code:'JS3255',nm:'食品科學及營養學(榮譽)理學士組合課程 (食品科技與食物安全 / 人類營養學及健康)',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math'],w7:['chi','intSci','m1','m2','phy']},a:{uq:null,m:203.0,lq:198.5}},
+{code:'JS3310',nm:'酒店及旅遊管理(榮譽)理學士組合課程 (酒店管理 / 智慧旅遊及酒店產業 / 會展及體驗管理)',fac:'酒旅學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:166.5,lq:163.0}},
+{code:'JS3320',nm:'中國歷史及文化(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','chiHist','chiLit','eng','hist'],w7:['math'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:223.0,lq:210.0}},
 {code:'JS3337',nm:'精神健康護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:209.0,lq:206.0}},
 {code:'JS3375',nm:'環境工程及可持續發展學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','econ','eng','geog','intSci','m1','m2','math','phy'],w7:['dat','ict'],bonus6:true},a:{uq:null,m:220.0,lq:218.0}},
 {code:'JS3478',nm:'醫療化驗科學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','m1','m2','math'],w7:['phy']},a:{uq:null,m:309.0,lq:306.5}},
@@ -535,105 +518,192 @@ var UNI=[
 {code:'JS3636',nm:'物理治療學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','intSci','m1','m2','math','phy'],w7:['hmsc','pe']},a:{uq:null,m:320.0,lq:320.0}},
 {code:'JS3648',nm:'護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:218.0,lq:213.5}},
 {code:'JS3739',nm:'土木工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','intSci','m1','m2','math','phy'],w7:['bio','chi','dat','econ','geog','ict'],bonus6:true},a:{uq:null,m:216.5,lq:205.0}},
-{code:'JS3741',nm:'機械工程學(榮譽)工學士組合課程 (智能機械人工程學 /…',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','dat','eng','ict','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
+{code:'JS3741',nm:'機械工程學(榮譽)工學士組合課程 (智能機械人工程學 / 機械工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','dat','eng','ict','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
 {code:'JS3789',nm:'地產及建設測量學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true},a:{uq:null,m:175.8,lq:165.3}},
 {code:'JS3791',nm:'建築工程及管理學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','ths'],bonus6:true},a:{uq:null,m:188.1,lq:185.1}},
-{code:'JS3868',nm:'電子計算及人工智能(榮譽)理學士組合課程 (計算機科學 …',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiHist','chiLit','dat','ethics','geog','hist','hmsc','intSci','litEng','mus','pe','ths','va']},a:{uq:null,m:230.0,lq:215.0}},
+{code:'JS3868',nm:'電子計算及人工智能(榮譽)理學士組合課程 (計算機科學 / 企業信息管理)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiHist','chiLit','dat','ethics','geog','hist','hmsc','intSci','litEng','mus','pe','ths','va']},a:{uq:null,m:230.0,lq:215.0}},
 {code:'JS3050',nm:'時裝(榮譽)文學士',fac:'設計學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','bafs','chem','chiHist','combSci_bc','econ','geog','hist','tl_fct','va'],w7:['chi','combSci_bp','combSci_pc','dat','eng','ict','intSci','math','m1','m2','phy','tl_fst'],bonus6:true},a:{uq:null,m:177.0,lq:164.0}},
 {code:'JS3290',nm:'眼科視光學(榮譽)理學士',fac:'醫療及社會科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci_bc','combSci_bp','combSci_pc','eng','math','m1','m2','phy'],w7:['chi'],bonus6:true},a:{uq:null,m:277.8,lq:247.8}}
 ]},
-{id:'hkbu',s:'HKBU',n:'香港浸會大學',c:'#a18249',cbr:'never',cbp:{},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
-{code:'JS2020',nm:'文學士(榮譽) (中國語言文學 / 創意及專業寫作 / …',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:21.95,lq:null}},
-{code:'JS2025',nm:'宗教、哲學及倫理文學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:22.07,lq:null}},
-{code:'JS2060',nm:'文學士(榮譽) / 音樂學士(榮譽) (音樂學 / 創意…',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:22.15,lq:null}},
-{code:'JS2110',nm:'工商管理學士(榮譽) - 會計學專修',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:20.68,lq:null}},
-{code:'JS2120',nm:'工商管理學士(榮譽)',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:21.0,lq:null}},
-{code:'JS2310',nm:'傳理學學士(榮譽) (新聞與數碼媒體 / 公關及廣告)',fac:'傳理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:21.85,lq:null}},
-{code:'JS2320',nm:'傳理學學士(榮譽)電影學(動畫及媒體藝術專修)',fac:'傳理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
-{code:'JS2330',nm:'電影電視學文學士(榮譽)',fac:'傳理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:18.55,lq:null}},
-{code:'JS2340',nm:'環球銛幕演藝藝術學士(榮譽)',fac:'傳理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:21.83,lq:null}},
-{code:'JS2370',nm:'傳理學學士(榮譽)遊戲設計與動畫',fac:'傳理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:22.99,lq:null}},
-{code:'JS2410',nm:'中醫學學士及生物醫學理學士(榮譽)',fac:'醫學院',f:{d:'Best 5',bn:5},a:{uq:null,m:20.15,lq:null}},
-{code:'JS2510',nm:'理學士(榮譽)',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:32.27,lq:null}},
-{code:'JS2610',nm:'文學士(榮譽) / 社會科學學士(榮譽) (歐洲研究(法…',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:25.5,lq:null}},
-{code:'JS2620',nm:'體育及康樂管理文學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:21.3,lq:null}},
-{code:'JS2660',nm:'社會工作學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:24.88,lq:null}},
-{code:'JS2810',nm:'視覺藝術文學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:19.5,lq:null}},
-{code:'JS2910',nm:'商業計算及數據分析理學士(榮譽)',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:18.7,lq:null}},
-{code:'JS2920',nm:'藝術及科技文理學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:20.46,lq:null}},
-{code:'JS2930',nm:'工商管理文學士(榮譽)(環球娛樂)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:19.34,lq:null}},
-{code:'JS2940',nm:'社會科學學士(榮譽) / 理學士(榮譽) 健康與社會福祉創新',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:18.9,lq:null}},
-{code:'JS2950',nm:'文理及科技學士(榮譽)個人化專修',fac:'Division o…',f:{d:'Best 5',bn:5},a:{uq:null,m:25.54,lq:null}},
-{code:'JS2960',nm:'數位未來與人文學科文理學士(榮譽)',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:19.73,lq:null}}
+{id:'hkbu',s:'HKBU',n:'香港浸會大學',c:'#a18249',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
+{code:'JS2020',nm:'文學士(榮譽) (中國語言文學 / 創意及專業寫作 / 英國語言文學 / 人文學 / 翻譯學)',fac:'文學院',f:{catb:['translation','creativeeng','proeng','voceng','film','digitalmedia','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:21.95,lq:null}},
+{code:'JS2025',nm:'宗教、哲學及倫理文學士(榮譽)',fac:'文學院',f:{catb:['psych','legal','childcare','translation','creativeeng','proeng','voceng'],d:'Best 5',bn:5},a:{uq:null,m:22.07,lq:null}},
+{code:'JS2060',nm:'文學士(榮譽) / 音樂學士(榮譽) (音樂 / 創意產業)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:22.15,lq:null}},
+{code:'JS2110',nm:'工商管理學士(榮譽) - 會計學專修',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.68,lq:null}},
+{code:'JS2120',nm:'工商管理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:21.0,lq:null}},
+{code:'JS2310',nm:'傳理學學士(榮譽) (新聞與數碼媒體 / 公關及廣告)',fac:'傳理學院',f:{catb:['film','digitalmedia','pr','socialmedia','gamedesign','visual','music'],d:'Best 5',bn:5},a:{uq:null,m:21.85,lq:null}},
+{code:'JS2320',nm:'傳理學學士(榮譽)電影學(動畫及媒體藝術專修)',fac:'傳理學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JS2330',nm:'電影電視學文學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','gamedesign','visual','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:18.55,lq:null}},
+{code:'JS2340',nm:'環球銛幕演藝藝術學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','visual'],d:'Best 5',bn:5},a:{uq:null,m:21.83,lq:null}},
+{code:'JS2370',nm:'傳理學學士(榮譽)遊戲設計與動畫',fac:'傳理學院',f:{catb:['gamedesign','film','digitalmedia','visual','music','pr','socialmedia','computer','data'],d:'Best 5',bn:5},a:{uq:null,m:22.99,lq:null}},
+{code:'JS2410',nm:'中醫學學士及生物醫學理學士(榮譽)',fac:'醫學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:20.15,lq:null}},
+{code:'JS2510',nm:'理學士(榮譽)',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:32.27,lq:null}},
+{code:'JS2610',nm:'文學士(榮譽) / 社會科學學士(榮譽) (歐洲研究[法文/德文] / 地理 / 全球及中國研究 / 政治及國際關係學 / 歷史 / 社會學)',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:25.5,lq:null}},
+{code:'JS2620',nm:'體育及康樂管理文學士(榮譽)',fac:'文學院',f:{catb:['healthsci','sportsci','sport','medsci','psych','food'],d:'Best 5',bn:5},a:{uq:null,m:21.3,lq:null}},
+{code:'JS2660',nm:'社會工作學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:24.88,lq:null}},
+{code:'JS2810',nm:'視覺藝術文學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.5,lq:null}},
+{code:'JS2910',nm:'商業計算及數據分析理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.7,lq:null}},
+{code:'JS2920',nm:'藝術及科技文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.46,lq:null}},
+{code:'JS2930',nm:'工商管理文學士(榮譽)(環球娛樂)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.34,lq:null}},
+{code:'JS2940',nm:'社會科學學士(榮譽) / 理學士(榮譽) 健康與社會福祉創新',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.9,lq:null}},
+{code:'JS2950',nm:'文理及科技學士(榮譽)個人化專修',fac:'Division o…',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:25.54,lq:null}},
+{code:'JS2960',nm:'數位未來與人文學科文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.73,lq:null}}
+]},
+{id:'polyu',s:'PolyU',n:'香港理工大學',c:'#a4123f',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:8.5,N2:5.5,N3:3,G6:8.5,G5:7,G4:4,G3:3,C2:8.5,C1:7,B2:5.5,B1:4,A2:3},p:[
+{code:'JS3000',nm:'跨學科組合學士課程',fac:'跨學科',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true},a:{uq:null,m:null,lq:null}},
+{code:'JS3003',nm:'工商管理組合學士課程',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:177.0}},
+{code:'JS3004',nm:'建設及環境組合學士課程',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','ict'],bonus6:true},a:{uq:null,m:184.0,lq:181.0}},
+{code:'JS3005',nm:'工程學科組合學士課程',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','dat','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiLit','geog','intSci','litEng']},a:{uq:null,m:215.0,lq:205.0}},
+{code:'JS3006',nm:'計算機及數學科學組合學士課程',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:215.0,lq:210.0}},
+{code:'JS3007',nm:'人文學科組合學士課程',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:185.0,lq:179.0}},
+{code:'JS3008',nm:'理學組合學士課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
+{code:'JS3011',nm:'生物科技及化學科技(榮譽)理學士組合課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math','phy'],w7:['chi','intSci','m1','m2']},a:{uq:null,m:209.0,lq:203.5}},
+{code:'JS3030',nm:'物理學(榮譽)理學士副主修人工智能及數據分析 / 創新及創業',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:215.0,lq:205.0}},
+{code:'JS3060',nm:'會計及金融(榮譽)工商管理學士組合課程 (會計學 / 會計及金融 / 數碼金融及投資學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:185.5,lq:185.0}},
+{code:'JS3070',nm:'環球商業及物流、航空、航運及供應鏈管理(榮譽)工商管理學士組合課程',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:175.0}},
+{code:'JS3080',nm:'管理及市場學(榮譽)工商管理學士組合課程 (管理學 / 市場學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:182.5,lq:179.0}},
+{code:'JS3130',nm:'空間數據科學及智慧城市(榮譽)理學士組合課程 (土地測量及地理資訊學 / 城市信息學及智慧城市)',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','ict','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','hist','hmsc','litEng','mus','pe','ths','va'],bonus6:true},a:{uq:null,m:206.0,lq:203.0}},
+{code:'JS3140',nm:'航空工程學(榮譽)工學士組合課程 (航空工程學 / 民航工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bio','chi','intSci']},a:{uq:null,m:210.0,lq:205.0}},
+{code:'JS3150',nm:'生物醫學工程(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','m1','m2','math','phy'],w7:['chi','eng']},a:{uq:null,m:218.0,lq:213.5}},
+{code:'JS3160',nm:'體育科技(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5 approx.)',bn:5,polyu:true,w10:['eng','math','m1','m2','bio','chem','phy','bafs','econ','ict'],w7:['chi']},a:{uq:null,m:null,lq:null}},
+{code:'JS3170',nm:'電機工程學(榮譽)工學士組合課程 (電機工程學 / 運輸系統工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','chiLit','dat','econ','litEng']},a:{uq:null,m:215.0,lq:210.0}},
+{code:'JS3180',nm:'資訊及人工智能工程學(榮譽)工學士/理學士組合課程 (物聯網 / 人工智能 / 資訊安全)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['chi','dat','intSci']},a:{uq:null,m:null,lq:null}},
+{code:'JS3211',nm:'建築科學及工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','geog','hmsc','ict','intSci','m1','m2'],bonus6:true},a:{uq:null,m:181.5,lq:179.5}},
+{code:'JS3214',nm:'建築學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','intSci','litEng','m1','m2','math','mus','phy','ths','va'],bonus6:true},a:{uq:null,m:165.8,lq:163.1}},
+{code:'JS3220',nm:'應用數學及金融分析(榮譽)理學士組合課程 (應用數學 / 投資科學及金融分析 / 量化金融及金融科技)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','combSci','econ','ict','m1','m2','phy']},a:{uq:null,m:193.5,lq:189.5}},
+{code:'JS3223',nm:'數據科學及人工智能(榮譽)理學士組合課程 (數據科學及分析 / 金融科技及人工智能)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:220.0,lq:211.0}},
+{code:'JS3236',nm:'產品創新及智能製造(榮譽)工學士組合課程 (產品創新兼市場學 / 智能製造)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','dat','econ','intSci']},a:{uq:null,m:195.0,lq:193.0}},
+{code:'JS3237',nm:'智能供應鏈及工程管理(榮譽)理學士組合課程 (智能供應鏈 / 工程管理兼數據分析 / 航空營運及系統學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','econ','eng','ict','math'],w7:['bio','chem','chi','combSci_bc','combSci_bp','combSci_pc','dat','geog','intSci','phy']},a:{uq:null,m:195.0,lq:193.0}},
+{code:'JS3240',nm:'英文及應用語言學(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','chiHist','chiLit','dat','ethics','geog','hist','hmsc','ict','litEng','math','mus','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:178.0,lq:175.0}},
+{code:'JS3242',nm:'言語治療(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng','math'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:264.3,lq:259.8}},
+{code:'JS3243',nm:'語言科學及技術(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 +6th (×10/×7)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:null,lq:null}},
+{code:'JS3250',nm:'應用社會科學(榮譽)文學士組合課程 (社會工作 / 社會政策及社會創業)',fac:'醫社學院',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:171.5,lq:164.5}},
+{code:'JS3255',nm:'食品科學及營養學(榮譽)理學士組合課程 (食品科技與食物安全 / 人類營養學及健康)',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math'],w7:['chi','intSci','m1','m2','phy']},a:{uq:null,m:203.0,lq:198.5}},
+{code:'JS3310',nm:'酒店及旅遊管理(榮譽)理學士組合課程 (酒店管理 / 智慧旅遊及酒店產業 / 會展及體驗管理)',fac:'酒旅學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:166.5,lq:163.0}},
+{code:'JS3320',nm:'中國歷史及文化(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','chiHist','chiLit','eng','hist'],w7:['math'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:223.0,lq:210.0}},
+{code:'JS3337',nm:'精神健康護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:209.0,lq:206.0}},
+{code:'JS3375',nm:'環境工程及可持續發展學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','econ','eng','geog','intSci','m1','m2','math','phy'],w7:['dat','ict'],bonus6:true},a:{uq:null,m:220.0,lq:218.0}},
+{code:'JS3478',nm:'醫療化驗科學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','m1','m2','math'],w7:['phy']},a:{uq:null,m:309.0,lq:306.5}},
+{code:'JS3569',nm:'設計學(榮譽)文學士組合課程',fac:'設計學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','dat','eng','ict','math','va'],w7:['bafs','econ','hist','mus','ths']},a:{uq:null,m:190,lq:178}},
+{code:'JS3612',nm:'放射學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','math','phy'],w7:['m1','m2']},a:{uq:null,m:339.0,lq:328.5}},
+{code:'JS3624',nm:'職業治療學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','phy'],w7:['bafs','chiHist','chiLit','dat','econ','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math']},a:{uq:null,m:279.5,lq:278}},
+{code:'JS3636',nm:'物理治療學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','intSci','m1','m2','math','phy'],w7:['hmsc','pe']},a:{uq:null,m:320.0,lq:320.0}},
+{code:'JS3648',nm:'護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:218.0,lq:213.5}},
+{code:'JS3739',nm:'土木工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','intSci','m1','m2','math','phy'],w7:['bio','chi','dat','econ','geog','ict'],bonus6:true},a:{uq:null,m:216.5,lq:205.0}},
+{code:'JS3741',nm:'機械工程學(榮譽)工學士組合課程 (智能機械人工程學 / 機械工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','dat','eng','ict','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
+{code:'JS3789',nm:'地產及建設測量學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true},a:{uq:null,m:175.8,lq:165.3}},
+{code:'JS3791',nm:'建築工程及管理學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','ths'],bonus6:true},a:{uq:null,m:188.1,lq:185.1}},
+{code:'JS3868',nm:'電子計算及人工智能(榮譽)理學士組合課程 (計算機科學 / 企業信息管理)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiHist','chiLit','dat','ethics','geog','hist','hmsc','intSci','litEng','mus','pe','ths','va']},a:{uq:null,m:230.0,lq:215.0}},
+{code:'JS3050',nm:'時裝(榮譽)文學士',fac:'設計學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','bafs','chem','chiHist','combSci_bc','econ','geog','hist','tl_fct','va'],w7:['chi','combSci_bp','combSci_pc','dat','eng','ict','intSci','math','m1','m2','phy','tl_fst'],bonus6:true},a:{uq:null,m:177.0,lq:164.0}},
+{code:'JS3290',nm:'眼科視光學(榮譽)理學士',fac:'醫療及社會科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci_bc','combSci_bp','combSci_pc','eng','math','m1','m2','phy'],w7:['chi'],bonus6:true},a:{uq:null,m:277.8,lq:247.8}}
+]},
+{id:'hkbu',s:'HKBU',n:'香港浸會大學',c:'#a18249',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
+{code:'JS2020',nm:'文學士(榮譽) (中國語言文學 / 創意及專業寫作 / 英國語言文學 / 人文學 / 翻譯學)',fac:'文學院',f:{catb:['translation','creativeeng','proeng','voceng','film','digitalmedia','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:21.95,lq:null}},
+{code:'JS2025',nm:'宗教、哲學及倫理文學士(榮譽)',fac:'文學院',f:{catb:['psych','legal','childcare','translation','creativeeng','proeng','voceng'],d:'Best 5',bn:5},a:{uq:null,m:22.07,lq:null}},
+{code:'JS2060',nm:'文學士(榮譽) / 音樂學士(榮譽) (音樂 / 創意產業)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:22.15,lq:null}},
+{code:'JS2110',nm:'工商管理學士(榮譽) - 會計學專修',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.68,lq:null}},
+{code:'JS2120',nm:'工商管理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:21.0,lq:null}},
+{code:'JS2310',nm:'傳理學學士(榮譽) (新聞與數碼媒體 / 公關及廣告)',fac:'傳理學院',f:{catb:['film','digitalmedia','pr','socialmedia','gamedesign','visual','music'],d:'Best 5',bn:5},a:{uq:null,m:21.85,lq:null}},
+{code:'JS2320',nm:'傳理學學士(榮譽)電影學(動畫及媒體藝術專修)',fac:'傳理學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JS2330',nm:'電影電視學文學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','gamedesign','visual','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:18.55,lq:null}},
+{code:'JS2340',nm:'環球銛幕演藝藝術學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','visual'],d:'Best 5',bn:5},a:{uq:null,m:21.83,lq:null}},
+{code:'JS2370',nm:'傳理學學士(榮譽)遊戲設計與動畫',fac:'傳理學院',f:{catb:['gamedesign','film','digitalmedia','visual','music','pr','socialmedia','computer','data'],d:'Best 5',bn:5},a:{uq:null,m:22.99,lq:null}},
+{code:'JS2410',nm:'中醫學學士及生物醫學理學士(榮譽)',fac:'醫學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:20.15,lq:null}},
+{code:'JS2510',nm:'理學士(榮譽)',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:32.27,lq:null}},
+{code:'JS2610',nm:'文學士(榮譽) / 社會科學學士(榮譽) (歐洲研究[法文/德文] / 地理 / 全球及中國研究 / 政治及國際關係學 / 歷史 / 社會學)',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:25.5,lq:null}},
+{code:'JS2620',nm:'體育及康樂管理文學士(榮譽)',fac:'文學院',f:{catb:['healthsci','sportsci','sport','medsci','psych','food'],d:'Best 5',bn:5},a:{uq:null,m:21.3,lq:null}},
+{code:'JS2660',nm:'社會工作學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:24.88,lq:null}},
+{code:'JS2810',nm:'視覺藝術文學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.5,lq:null}},
+{code:'JS2910',nm:'商業計算及數據分析理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.7,lq:null}},
+{code:'JS2920',nm:'藝術及科技文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.46,lq:null}},
+{code:'JS2930',nm:'工商管理文學士(榮譽)(環球娛樂)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.34,lq:null}},
+{code:'JS2940',nm:'社會科學學士(榮譽) / 理學士(榮譽) 健康與社會福祉創新',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.9,lq:null}},
+{code:'JS2950',nm:'文理及科技學士(榮譽)個人化專修',fac:'Division o…',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:25.54,lq:null}},
+{code:'JS2960',nm:'數位未來與人文學科文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.73,lq:null}}
 ]},
 {id:'lingnan',s:'LingnanU',n:'嶺南大學',c:'#bf213e',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
-{code:'JS7101',nm:'Bachelor of Arts (Honours) i…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:25.845,lq:25.27}},
-{code:'JS7211',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:27.05,lq:27.0}},
-{code:'JS7216',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:27.0,lq:26.0}},
-{code:'JS7225',nm:'Bachelor of Science (Honours…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:31.365,lq:30.17}},
-{code:'JS7301',nm:'Bachelor of Social Sciences …',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:26.4,lq:26.0}},
-{code:'JS7302',nm:'Bachelor of Social Sciences …',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:28.0,lq:26.9}},
-{code:'JS7305',nm:'Bachelor of Social Sciences …',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:21.5,lq:21.0}},
-{code:'JS7503',nm:'Bachelor of Arts (Honours) i…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:25.845,lq:25.0}},
-{code:'JS7606',nm:'Bachelor of Arts (Honours) in Cultural Studies',fac:'Faculty of Arts',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.15,lq:24.15}},
-{code:'JS7709',nm:'Bachelor of Arts (Honours) in History',fac:'Faculty of Arts',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.2,lq:26.0}},
-{code:'JS7802',nm:'Bachelor of Arts (Honours) in Philosophy',fac:'Faculty of Arts',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.0,lq:25.0}},
-{code:'JS7905',nm:'Bachelor of Arts (Honours) in Film and Visual Arts',fac:'Faculty of Arts',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.0,lq:27.0}},
-{code:'JS7306',nm:'Bachelor of Social Sciences (Honours) in Social and Public Policy Studies',fac:'Faculty of Social Sciences',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:24.0,lq:23.9}}
+{code:'JS7101',nm:'Bachelor of Arts (Honours) in Chinese (Chinese Language & Literature / Creative Writing / Digital Literature)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.845,lq:25.27}},
+{code:'JS7211',nm:'Bachelor of Business Administration (Honours) - Accounting and Corporate Governance',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:27.05,lq:27.0}},
+{code:'JS7216',nm:'Bachelor of Business Administration (Honours) in Risk and Insurance Management',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:27.0,lq:26.0}},
+{code:'JS7225',nm:'Bachelor of Science (Honours) in Data Science',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:31.365,lq:30.17}},
+{code:'JS7301',nm:'Bachelor of Social Sciences (Honours) - Economics',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.4,lq:26.0}},
+{code:'JS7302',nm:'Bachelor of Social Sciences (Honours) - Government and International Affairs',fac:'理學院',f:{catb:'no',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.0,lq:26.9}},
+{code:'JS7305',nm:'Bachelor of Social Sciences (Honours) - Health and Social Services Management',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:21.5,lq:21.0}},
+{code:'JS7503',nm:'Bachelor of Arts (Honours) in English Studies',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.845,lq:25.0}},
+{code:'JS7606',nm:'Bachelor of Arts (Honours) in Cultural Studies',fac:'Faculty of Arts',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.15,lq:24.15}},
+{code:'JS7709',nm:'Bachelor of Arts (Honours) in History',fac:'Faculty of Arts',f:{catb:'no',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.2,lq:26.0}},
+{code:'JS7802',nm:'Bachelor of Arts (Honours) in Philosophy',fac:'Faculty of Arts',f:{catb:'no',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.0,lq:25.0}},
+{code:'JS7905',nm:'Bachelor of Arts (Honours) in Film and Visual Arts',fac:'Faculty of Arts',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.0,lq:27.0}},
+{code:'JS7306',nm:'Bachelor of Social Sciences (Honours) in Social and Public Policy Studies',fac:'Faculty of Social Sciences',f:{catb:'no',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:24.0,lq:23.9}},
+{code:'JS7133',nm:'Bachelor of Arts (Honours) in Animation and Digital Arts',fac:'Faculty of Arts',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:24.0,lq:23.5}},
+{code:'JS7201',nm:'Bachelor of Arts (Honours) in Translation',fac:'Faculty of Arts',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.125,lq:24.5}},
+{code:'JS7212',nm:'Bachelor of Business Administration (Honours) - Business Analytics and Innovation',fac:'Faculty of Business',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:27.0,lq:25.05}},
+{code:'JS7213',nm:'Bachelor of Business Administration (Honours) - Finance',fac:'Faculty of Business',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.75,lq:27.0}},
+{code:'JS7214',nm:'Bachelor of Business Administration (Honours) - Human Resource Management and Analytics',fac:'Faculty of Business',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.5,lq:26.5}},
+{code:'JS7215',nm:'Bachelor of Business Administration (Honours) - Marketing and Social Media',fac:'Faculty of Business',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:28.5,lq:27.05}},
+{code:'JS7303',nm:'Bachelor of Social Sciences (Honours) in Psychology',fac:'Faculty of Social Sciences',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.0,lq:24.5}},
+{code:'JS7304',nm:'Bachelor of Social Sciences (Honours) in Sociology',fac:'Faculty of Social Sciences',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:25.0,lq:24.5}},
+{code:'JS7307',nm:'Bachelor of Social Sciences (Honours) in Social Data Science',fac:'Faculty of Social Sciences',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:24.25,lq:23.0}},
+{code:'JS7123',nm:'Bachelor of Social Sciences (Honours) in Global Development and Sustainability',fac:'School of Interdisciplinary Studies',f:{catb:'yes',d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:26.96,lq:26.07}}
 ]},
 {id:'eduhk',s:'EdUHK',n:'香港教育大學',c:'#005baa',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
-{code:'JS8001',nm:'BA (Hons) in Creative and Di…',fac:'其他',f:{d:'',bn:5},a:{uq:null,m:21.5,lq:21.3}},
-{code:'JS8002',nm:'BA (Hons) in Creative and Di…',fac:'其他',f:{d:' (Va×1.5)',bn:5,w:{va:1.5}},a:{uq:null,m:22.0,lq:22.0}},
-{code:'JS8003',nm:'BA (Hons) in Digital Chinese…',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:27.5,lq:26.0}},
-{code:'JS8004',nm:'BA (Hons) in English Studies…',fac:'其他',f:{d:' (Eng×1.5, Ict×1.5)',bn:5,w:{eng:1.5,ict:1.5}},a:{uq:null,m:23.5,lq:23.5}},
-{code:'JS8005',nm:'BA (Hons) in Heritage Educat…',fac:'其他',f:{d:' (Hist×1.5)',bn:5,w:{hist:1.5}},a:{uq:null,m:26.3,lq:26.0}},
-{code:'JS8006',nm:'BSocSc (Hons) in Psychology …',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:24.0,lq:23.5}},
-{code:'JS8007',nm:'BA (Hons) in Personal Financ…',fac:'其他',f:{d:' (Bafs×1.5, Econ×1.5)',bn:5,w:{bafs:1.5,econ:1.5}},a:{uq:null,m:25.0,lq:24.5}},
-{code:'JS8008',nm:'BSc (Hons) in Artificial Int…',fac:'其他',f:{d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,ict:1.5,bio:1.5,chem:1.5,phy:1.5}},a:{uq:null,m:26.0,lq:24.1}},
-{code:'JS8009',nm:'BSc (Hons) in Artificial Int…',fac:'其他',f:{d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:25.5,lq:25.0}},
-{code:'JS8010',nm:'BSc (Hons) in Sports Science…',fac:'其他',f:{d:'',bn:5},a:{uq:null,m:22.0,lq:20.8}},
-{code:'JS8011',nm:'BSc (Hons) in Integrated Env…',fac:'其他',f:{d:' (Chem×1.5, Bio×1.5, Phy×1.2...)',bn:5,w:{chem:1.5,bio:1.5,phy:1.2,math:1.1,m1:1.1,m2:1.1,geog:1.1}},a:{uq:null,m:25.2,lq:24.6}},
-{code:'JS8012',nm:'BSocSc (Hons) in Sociology a…',fac:'其他',f:{d:' (Eng×1.5, Geog×1.5)',bn:5,w:{eng:1.5,geog:1.5}},a:{uq:null,m:25.3,lq:25.0}},
-{code:'JS8013',nm:'BSocSc (Hons) in Sociology a…',fac:'其他',f:{d:' (Econ×1.5, Geog×1.5, Hist×1.5)',bn:5,w:{econ:1.5,geog:1.5,hist:1.5}},a:{uq:null,m:25.3,lq:24.5}},
-{code:'JS8507',nm:'HD in Early Childhood Educat…',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:17.5,lq:16.0}},
-{code:'JS8651',nm:'BSocSc (Hons) in Psychology',fac:'其他',f:{d:'',bn:5},a:{uq:null,m:20.0,lq:20.0}},
-{code:'JS8663',nm:'BA (Hons) in Special Education',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:23.5,lq:23.0}},
-{code:'JS8674',nm:'BA (Hons) in Digital Chinese…',fac:'其他',f:{d:' (Chi×1.5, Ict×1.5)',bn:5,w:{chi:1.5,ict:1.5}},a:{uq:null,m:23.8,lq:23.1}},
-{code:'JS8675',nm:'BA (Hons) in English Studies…',fac:'其他',f:{d:' (Eng×1.5, Ict×1.5)',bn:5,w:{eng:1.5,ict:1.5}},a:{uq:null,m:21.5,lq:21.0}},
-{code:'JS8685',nm:'BA (Hons) in Creative and Di…',fac:'其他',f:{d:'',bn:5},a:{uq:null,m:20.3,lq:19.3}},
-{code:'JS8686',nm:'BA (Hons) in Creative and Di…',fac:'其他',f:{d:' (Va×1.5)',bn:5,w:{va:1.5}},a:{uq:null,m:22.0,lq:21.8}},
-{code:'JS8687',nm:'BA (Hons) in Heritage Educat…',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5, Hist×1.5...)',bn:5,w:{chi:1.5,eng:1.5,hist:1.5,va:1.5}},a:{uq:null,m:25.5,lq:25.5}},
-{code:'JS8688',nm:'BA (Hons) in Personal Finance',fac:'其他',f:{d:'',bn:5},a:{uq:null,m:19.0,lq:18.8}},
-{code:'JS8702',nm:'BSc (Hons) in Integrated Env…',fac:'其他',f:{d:' (Bio×1.6, Chem×1.6, Geog×1.2...)',bn:5,w:{bio:1.6,chem:1.6,geog:1.2,math:1.2,m1:1.2,m2:1.2,phy:1.2}},a:{uq:null,m:23.2,lq:23.0}},
-{code:'JS8714',nm:'BSc (Hons) in Artificial Int…',fac:'其他',f:{d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,bio:1.5,chem:1.5,phy:1.5,ict:1.5}},a:{uq:null,m:25.0,lq:24.5}},
-{code:'JS8726',nm:'BSc (Hons) in Sports Science…',fac:'其他',f:{d:' (Bio×2, Eng×1.5, Math×1.5...)',bn:5,w:{bio:2,eng:1.5,math:1.5,m1:1.5,m2:1.5,ict:1.5}},a:{uq:null,m:28.5,lq:26.0}},
-{code:'JS8727',nm:'BSc (Hons) in Speech and Lan…',fac:'其他',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:28.0,lq:26.0}}
+{code:'JS8001',nm:'BA (Hons) in Creative and Digital Arts and BEd (Hons) (Music)',fac:'其他',f:{catb:'yes',d:' (Mus×1.5)',bn:5,w:{mus:1.5}},a:{uq:null,m:21.5,lq:21.3}},
+{code:'JS8002',nm:'BA (Hons) in Creative and Digital Arts and BEd (Hons) (Visual Arts)',fac:'其他',f:{catb:'yes',d:' (Va×1.5)',bn:5,w:{va:1.5}},a:{uq:null,m:22.0,lq:22.0}},
+{code:'JS8003',nm:'BA (Hons) in Digital Chinese Culture and Communication and BEd (Hons) (Chinese Language)',fac:'其他',f:{catb:'no',d:' (Chi×1.5, Eng×1.5, ChiLit×1.5, ICT×1.5)',bn:5,w:{chi:1.5,eng:1.5,litchi:1.5,ict:1.5}},a:{uq:null,m:27.5,lq:26.0}},
+{code:'JS8004',nm:'BA (Hons) in English Studies and Digital Communication and BEd (Hons) (English Language)',fac:'其他',f:{catb:'no',d:' (Eng×1.5, ICT×1.5, LitEng×1.5)',bn:5,w:{eng:1.5,ict:1.5,liteng:1.5}},a:{uq:null,m:23.5,lq:23.5}},
+{code:'JS8005',nm:'BA (Hons) in Heritage Education and Arts Management and BEd (Hons) (Chinese History)',fac:'其他',f:{catb:'no',d:' (CHist×1.5, Hist×1.5)',bn:5,w:{chist:1.5,hist:1.5}},a:{uq:null,m:26.3,lq:26.0}},
+{code:'JS8006',nm:'BSocSc (Hons) in Psychology and BEd (Hons) (Early Childhood Education)',fac:'其他',f:{catb:'yes',d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:24.0,lq:23.5}},
+{code:'JS8007',nm:'BA (Hons) in Personal Finance and BEd (Hons) (Business, Accounting and Financial Studies)',fac:'其他',f:{catb:'yes',d:' (Bafs×1.5, Econ×1.5)',bn:5,w:{bafs:1.5,econ:1.5}},a:{uq:null,m:25.0,lq:24.5}},
+{code:'JS8008',nm:'BSc (Hons) in AI and Educational Technology and BEd (Hons) (ICT and Primary Science)',fac:'其他',f:{catb:'yes',d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,ict:1.5,bio:1.5,chem:1.5,phy:1.5}},a:{uq:null,m:26.0,lq:24.1}},
+{code:'JS8009',nm:'BSc (Hons) in AI and Educational Technology and BEd (Hons) (Primary Mathematics)',fac:'其他',f:{catb:'yes',d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:25.5,lq:25.0}},
+{code:'JS8010',nm:'BSc (Hons) in Sports Science and Coaching and BEd (Hons) (Physical Education)',fac:'其他',f:{catb:'no',d:' (PE×1.5)',bn:5,w:{pe:1.5}},a:{uq:null,m:22.0,lq:20.8}},
+{code:'JS8011',nm:'BSc (Hons) in Integrated Environmental Management and BEd (Hons) (Science)',fac:'其他',f:{catb:'no',d:' (Chem×1.5, Bio×1.5, Phy×1.2...)',bn:5,w:{chem:1.5,bio:1.5,phy:1.2,math:1.1,m1:1.1,m2:1.1,geog:1.1}},a:{uq:null,m:25.2,lq:24.6}},
+{code:'JS8012',nm:'BSocSc (Hons) in Sociology and Community Studies and BEd (Hons) (Geography)',fac:'其他',f:{catb:'no',d:' (Eng×1.5, Geog×1.5)',bn:5,w:{eng:1.5,geog:1.5}},a:{uq:null,m:25.3,lq:25.0}},
+{code:'JS8013',nm:'BSocSc (Hons) in Sociology and Community Studies and BEd (Hons) (Primary Humanities)',fac:'其他',f:{catb:'yes',d:' (Econ×1.5, Geog×1.5, Hist×1.5)',bn:5,w:{econ:1.5,geog:1.5,hist:1.5}},a:{uq:null,m:25.3,lq:24.5}},
+{code:'JS8507',nm:'HD in Early Childhood Education',fac:'其他',f:{catb:'yes',d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:17.5,lq:16.0}},
+{code:'JS8651',nm:'BSocSc (Hons) in Psychology',fac:'其他',f:{catb:'no',d:'',bn:5},a:{uq:null,m:20.0,lq:20.0}},
+{code:'JS8663',nm:'BA (Hons) in Special Education',fac:'其他',f:{catb:'no',d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:23.5,lq:23.0}},
+{code:'JS8674',nm:'BA (Hons) in Digital Chinese Culture and Communication',fac:'其他',f:{catb:'no',d:' (Chi×1.5, Ict×1.5)',bn:5,w:{chi:1.5,ict:1.5}},a:{uq:null,m:23.8,lq:23.1}},
+{code:'JS8675',nm:'BA (Hons) in English Studies and Digital Communication',fac:'其他',f:{catb:'no',d:' (Eng×1.5, Ict×1.5)',bn:5,w:{eng:1.5,ict:1.5}},a:{uq:null,m:21.5,lq:21.0}},
+{code:'JS8685',nm:'BA (Hons) in Creative and Digital Arts (Music)',fac:'其他',f:{catb:'yes',d:' (Mus×1.5)',bn:5,w:{mus:1.5}},a:{uq:null,m:20.3,lq:19.3}},
+{code:'JS8686',nm:'BA (Hons) in Creative and Digital Arts (Visual Arts)',fac:'其他',f:{catb:'yes',d:' (Va×1.5)',bn:5,w:{va:1.5}},a:{uq:null,m:22.0,lq:21.8}},
+{code:'JS8687',nm:'BA (Hons) in Heritage Education and Arts Management',fac:'其他',f:{catb:'yes',d:' (Chi×1.5, Eng×1.5, Hist×1.5...)',bn:5,w:{chi:1.5,eng:1.5,hist:1.5,va:1.5}},a:{uq:null,m:25.5,lq:25.5}},
+{code:'JS8688',nm:'BA (Hons) in Personal Finance',fac:'其他',f:{catb:'no',d:'',bn:5},a:{uq:null,m:19.0,lq:18.8}},
+{code:'JS8702',nm:'BSc (Hons) in Integrated Environmental Management',fac:'其他',f:{catb:'no',d:' (Bio×1.6, Chem×1.6, Geog×1.2...)',bn:5,w:{bio:1.6,chem:1.6,geog:1.2,math:1.2,m1:1.2,m2:1.2,phy:1.2}},a:{uq:null,m:23.2,lq:23.0}},
+{code:'JS8714',nm:'BSc (Hons) in AI and Educational Technology',fac:'其他',f:{catb:'yes',d:' (Math×1.5, M1×1.5, M2×1.5...)',bn:5,w:{math:1.5,m1:1.5,m2:1.5,bio:1.5,chem:1.5,phy:1.5,ict:1.5}},a:{uq:null,m:25.0,lq:24.5}},
+{code:'JS8726',nm:'BSc (Hons) in Sports Science and Coaching',fac:'其他',f:{catb:'yes',d:' (Bio×2, Eng×1.5, Math×1.5...)',bn:5,w:{bio:2,eng:1.5,math:1.5,m1:1.5,m2:1.5,ict:1.5}},a:{uq:null,m:28.5,lq:26.0}},
+{code:'JS8727',nm:'BSc (Hons) in Speech Pathology and Rehabilitation',fac:'其他',f:{catb:'no',d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:28.0,lq:26.0}}
 ]},
-{id:'hkmu',s:'HKMU',n:'香港都會大學',c:'#0073b1',cbr:'always',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
-{code:'JSSU12',nm:'Bachelor of Arts with Honour…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:20.0,lq:19.0}},
-{code:'JSSU14',nm:'Bachelor of Fine Arts with H…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:15.0}},
-{code:'JSSU15',nm:'Bachelor of Fine Arts with H…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:15.0}},
-{code:'JSSU18',nm:'Bachelor of Arts with Honour…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:14.0}},
-{code:'JSSU40',nm:'Bachelor of Nursing with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:21.0,lq:20.0}},
-{code:'JSSU50',nm:'Bachelor of Nursing with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:19.0,lq:18.0}},
-{code:'JSSU66',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:null,lq:null}},
-{code:'JSSU67',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:19.0,lq:18.0}},
-{code:'JSSU69',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
-{code:'JSSU72',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
-{code:'JSSU77',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
-{code:'JSSU78',nm:'Bachelor of Engineering with…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17,lq:16}},
-{code:'JSSU79',nm:'Bachelor of Engineering with…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17,lq:16}},
-{code:'JSSU90',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:15.0}},
-{code:'JSSU96',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
-{code:'JSSU97',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
-{code:'JS9009',nm:'Bachelor of Social Sciences …',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:15.0}},
-{code:'JS9010',nm:'Bachelor of Social Sciences …',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:14.0}},
-{code:'JS9011',nm:'Bachelor of Arts with Honour…',fac:'文學院',f:{d:' (Chi×2)',bn:5,w:{chi:2}},a:{uq:null,m:22.0,lq:21.0}},
-{code:'JS9013',nm:'Bachelor of Arts with Honour…',fac:'教育學院',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:20.0,lq:19.0}},
-{code:'JS9016',nm:'Bachelor of Arts with Honour…',fac:'文學院',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:20.0,lq:18.0}},
-{code:'JS9262',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:14.0}},
-{code:'JS9280',nm:'Bachelor of Applied Psycholo…',fac:'文學院',f:{d:'',bn:5},a:{uq:null,m:16.0,lq:15.0}},
-{code:'JS9732',nm:'Bachelor of Science with Hon…',fac:'理學院',f:{d:'',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{id:'hkmu',s:'HKMU',n:'香港都會大學',c:'#0073b1',cbr:'always',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},gs:'leg',p:[
+{code:'JSSU12',nm:'Bachelor of Arts with Honours in Creative Writing and Film Arts',fac:'文學院',f:{d:'Best 5 (Chi×1.5,Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:20.0,lq:19.0}},
+{code:'JSSU14',nm:'Bachelor of Fine Arts with Honours in Animation and Visual Effects',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:15.0}},
+{code:'JSSU15',nm:'Bachelor of Fine Arts with Honours in Imaging Design and Digital Art',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:15.0}},
+{code:'JSSU18',nm:'Bachelor of Arts with Honours in New Music and Interactive Entertainment',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:14.0}},
+{code:'JSSU40',nm:'Bachelor of Nursing with Honours in General Health Care',fac:'理學院',f:{d:'Best 5 (Bio/Chem/Phy×1.2)',bn:5,w:{bio:1.2,chem:1.2,phy:1.2}},a:{uq:null,m:21.0,lq:20.0}},
+{code:'JSSU50',nm:'Bachelor of Nursing with Honours in Mental Health Care',fac:'理學院',f:{d:'Best 5 (Bio/Chem/Phy×1.2)',bn:5,w:{bio:1.2,chem:1.2,phy:1.2}},a:{uq:null,m:19.0,lq:18.0}},
+{code:'JSSU55',nm:'Bachelor of Science with Honours in Physiotherapy',fac:'理學院',f:{catb:'no',d:'Best 5 (Cat A only)',bn:5},a:{uq:null,m:22.0,lq:20.0}},
+{code:'JSSU61',nm:'Bachelor of Applied Science with Honours in Integrated Testing, Inspection and Certification',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JSSU66',nm:'Bachelor of Science with Honours in Diagnostic Radiography',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JSSU70',nm:'Bachelor of Science with Honours in Data Science and Artificial Intelligence',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JSSU67',nm:'Bachelor of Science with Honours in Medical Laboratory Science',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:19.0,lq:18.0}},
+{code:'JSSU69',nm:'Bachelor of Science with Honours in Food Testing Science',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JSSU72',nm:'Bachelor of Science with Honours in Computer Science',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JSSU77',nm:'Bachelor of Science with Honours in Construction Management and Quantity Surveying',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JSSU78',nm:'Bachelor of Engineering with Honours in Building Services Engineering and Sustainable Development',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17,lq:16}},
+{code:'JSSU79',nm:'Bachelor of Engineering with Honours in Civil Engineering',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17,lq:16}},
+{code:'JSSU90',nm:'Bachelor of Business Administration with Honours in International Hospitality and Attractions Management',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:15.0}},
+{code:'JSSU93',nm:'Bachelor of Business Administration with Honours in Aviation Services Management',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JSSU95',nm:'Bachelor of Business Administration with Honours in Sports and Recreation Management',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
+{code:'JSSU96',nm:'Bachelor of Business Administration with Honours in Finance and Financial Technology',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JSSU97',nm:'Bachelor of Business Administration with Honours in Global Marketing and Supply Chain Management',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
+{code:'JS9009',nm:'Bachelor of Social Sciences with Honours',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:15.0}},
+{code:'JS9010',nm:'Bachelor of Social Sciences with Honours in Psychology',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:14.0}},
+{code:'JS9011',nm:'Bachelor of Arts with Honours in Chinese',fac:'文學院',f:{d:' (Chi×2)',bn:5,w:{chi:2}},a:{uq:null,m:22.0,lq:21.0}},
+{code:'JS9013',nm:'Bachelor of Arts with Honours in Language Studies and Translation',fac:'教育學院',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:20.0,lq:19.0}},
+{code:'JS9016',nm:'Bachelor of Arts with Honours in Creative Advertising and Media Design',fac:'文學院',f:{d:' (Chi×1.5, Eng×1.5)',bn:5,w:{chi:1.5,eng:1.5}},a:{uq:null,m:20.0,lq:18.0}},
+{code:'JS9262',nm:'Bachelor of Business Adminis…',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:14.0}},
+{code:'JS9280',nm:'Bachelor of Applied Psychology with Honours, Bachelor of Business Management with Honours',fac:'文學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.0,lq:15.0}},
+{code:'JS9732',nm:'Bachelor of Science with Honours in Biomedical Sciences and Biotechnology',fac:'理學院',f:{d:'Best 5',bn:5},a:{uq:null,m:17.0,lq:16.0}},
 {code:'JS9019',nm:'Bachelor of Arts with Honours in English Language and Culture',fac:'School of Arts & Social Sciences',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:17.0,lq:15.0}},
 {code:'JS9220',nm:'Bachelor of Business Administration with Honours in Professional Accounting',fac:'Lee Shau Kee School of Business & Administration',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:17.0,lq:17.0}},
 {code:'JS9230',nm:'Bachelor of Business Administration with Honours in Business Management',fac:'Lee Shau Kee School of Business & Administration',f:{d:'Best 5',bn:5,gs:'leg'},a:{uq:null,m:16.0,lq:15.0}},
@@ -669,23 +739,23 @@ var UNI=[
 {code:'JSSV13',nm:'運動教練（榮譽）社會科學學士',fac:'Faculty of…',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:15.0,lq:null}},
 {code:'JSSV14',nm:'運動治療（榮譽）社會科學學士',fac:'Faculty of…',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}}
 ]},
-{id:'sfu',s:'SFU',n:'聖方濟各大學',c:'#1b3a6b',cbr:'always',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},sssdp:true,gs:'leg',p:[
-{code:'JSSA01',nm:'護理學（榮譽）學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16.0,lq:null}},
+{id:'sfu',s:'SFU',n:'聖方濟各大學',c:'#1b3a6b',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},sssdp:true,gs:'leg',p:[
+{code:'JSSA01',nm:'護理學（榮譽）學士',fac:'理學院',f:{catb:'no',d:'Best 5 (Cat A only)',bn:5},a:{uq:null,m:16.0,lq:null}},
 {code:'JSSA02',nm:'數碼娛樂科技（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16,lq:null}},
-{code:'JSSA03',nm:'物理治療學（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:21.0,lq:null}},
+{code:'JSSA03',nm:'物理治療學（榮譽）理學士',fac:'理學院',f:{catb:'no',d:'Best 5 (Cat A only)',bn:5},a:{uq:null,m:21.0,lq:null}},
 {code:'JSSA04',nm:'人工智能（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:17.0,lq:null}},
 {code:'JSSA05',nm:'翻譯科技（榮譽）文學士',fac:'文學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16.0,lq:null}},
 {code:'JSSA06',nm:'應用酒店及旅遊管理工商管理（榮譽）學士',fac:'商學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16.0,lq:null}}
 ]},
 {id:'hsuhk',s:'HSUHK',n:'香港恒生大學',c:'#003d6b',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},sssdp:true,gs:'leg',p:[
-{code:'JSSH01',nm:'供應鏈管理工商管理（榮譽）學士',fac:'商學院',f:{d:'Best 5 (Chi×3,Eng×5,Math×5...)',bn:5,w:{chi:3,eng:5,math:5,bafs:5,econ:5,phy:5,ict:3,bio:3,chem:3}},a:{uq:null,m:16.4,lq:null}},
-{code:'JSSH02',nm:'精算及保險（榮譽）理學士',fac:'商學院',f:{d:'Best 5 (Chi×3,Eng×5,Math×5...)',bn:5,w:{chi:3,eng:5,math:5,bafs:5,econ:5,phy:5,ict:3,bio:3,chem:3}},a:{uq:null,m:17.2,lq:null}},
-{code:'JSSH03',nm:'應用及人本計算學（榮譽）理學士',fac:'計算科學院',f:{d:'Best 5 subjects with weighted scoring',bn:5,w:{chi:2,eng:2,math:3,bafs:3,econ:3,ict:3,phy:3,bio:2,chem:2}},a:{uq:null,m:16.47,lq:null}},
-{code:'JSSH04',nm:'數據科學及商業智能學（榮譽）理學士',fac:'商學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.77,lq:null}},
-{code:'JSSH05',nm:'商務分析及資訊管理（榮譽）理學士',fac:'商學院',f:{d:'Best 5 (Chi×7,Eng×10,Math×10...)',bn:5,w:{chi:7,eng:10,math:10,bafs:10,econ:10,ict:10,phy:10,bio:7,chem:7,dat:7}},a:{uq:null,m:16.34,lq:null}},
-{code:'JSSH06',nm:'藝術設計（榮譽）文學士',fac:'School of …',f:{d:'Best 5',bn:5},a:{uq:null,m:14.93,lq:null}}
+{code:'JSSH01',nm:'供應鏈管理工商管理（榮譽）學士',fac:'商學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:16.4,lq:null}},
+{code:'JSSH02',nm:'精算及保險（榮譽）理學士',fac:'商學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:17.2,lq:null}},
+{code:'JSSH03',nm:'應用及人本計算學（榮譽）理學士',fac:'計算科學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:16.47,lq:null}},
+{code:'JSSH04',nm:'數據科學及商業智能學（榮譽）理學士',fac:'商學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:16.77,lq:null}},
+{code:'JSSH05',nm:'商務分析及資訊管理（榮譽）理學士',fac:'商學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:16.34,lq:null}},
+{code:'JSSH06',nm:'藝術設計（榮譽）文學士',fac:'藝術設計學院',f:{d:'Best 5 (incl. Math/M1/M2)',bn:5,inc:['math']},a:{uq:null,m:14.93,lq:null}}
 ]},
-{id:'twc',s:'TWC',n:'東華學院',c:'#8b1a2c',cbr:'always',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},sssdp:true,gs:'leg',p:[
+{id:'twc',s:'TWC',n:'東華學院',c:'#8b1a2c',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},sssdp:true,gs:'leg',p:[
 {code:'JSST01',nm:'護理學健康科學（榮譽）學士',fac:'School of …',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16.5,lq:null}},
 {code:'JSST02',nm:'醫療化驗科學（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:20.0,lq:null}},
 {code:'JSST03',nm:'放射治療學（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.8,lq:null}},
@@ -695,9 +765,16 @@ var UNI=[
 {code:'JSST07',nm:'醫療資訊及服務管理（榮譽）學士',fac:'School of …',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:14.9,lq:null}},
 {code:'JSST08',nm:'醫學影像（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:23.7,lq:null}}
 ]},
-{id:'hksyu',s:'HKSYU',n:'香港樹仁大學',c:'#1f4e79',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},sssdp:true,gs:'leg',p:[
+{id:'hksyu',s:'HKSYU',n:'香港樹仁大學',c:'#1f4e79',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},sssdp:true,gs:'leg',p:[
 {code:'JSSY01',nm:'金融科技商學（榮譽）學士',fac:'Department…',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:16.95,lq:null}},
 {code:'JSSY02',nm:'應用數據科學（榮譽）理學士',fac:'理學院',f:{d:'Best 5 subjects',bn:5},a:{uq:null,m:15.8,lq:null}}
+]},
+{id:'uowchk',s:'UOWCHK',n:'香港伍倫貢學院',c:'#003087',cbr:'always',cbp:{att_d2:4,att_d1:3,att:2},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},sssdp:true,gs:'leg',p:[
+{code:'JSSW01',nm:'Bachelor of Aviation (Honours) in Operations and Management',fac:'學院',f:{d:'Best 5',bn:5},a:{uq:null,m:15.3,lq:null}},
+{code:'JSSW02',nm:'Bachelor of Maritime Services and Operations Management (Honours)',fac:'學院',f:{d:'Best 5',bn:5},a:{uq:null,m:16.7,lq:null}}
+]},
+{id:'chc',s:'CHC',n:'香港珠海學院',c:'#8B0000',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:7,N2:5,N3:4,G6:7,G5:6,G4:5,G3:4,C2:7,C1:6,B2:5,B1:4,A2:3},sssdp:true,gs:'leg',p:[
+{code:'JSSC02',nm:'Bachelor of Science (Honours) in Architecture',fac:'學院',f:{d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}}
 ]}
 ];
 var NEW_PROGS=['JS6200','JS6236','JS6250','JS6937','JS3160','JS3180','JS4109','JS4372','JS1100','JSSV14','JS1300'];
@@ -729,20 +806,31 @@ function cS(grades,f,uni){
   for(var id in grades){
     var g=grades[id];
     if(g==='not_taken'||g==='U'||id==='csd')continue;
-    if(id.indexOf('catb_')===0){if(uni.cbr==='never')continue;var bp=uni.cbp||{};pts[id]=bp[g]||0;continue;}
-    if(id.indexOf('catc_')===0){if(uni.ccr==='no'||f.noCatC)continue;var cp=uni.ccp||{};pts[id]=cp[g]||0;continue;}
+    if(id.indexOf('catb_')===0){
+      if(f.catb==='no')continue;
+      if(uni.cbr==='never'&&!f.catb)continue;
+      if(Array.isArray(f.catb)){var cid=id.replace('catb_','');if(f.catb.indexOf(cid)<0)continue;}
+      var bp=uni.cbp||{};pts[id]=bp[g]||0;continue;
+    }
+    if(id.indexOf('catc_')===0){if(uni.ccr==='never'||f.noCatC)continue;var cp=uni.ccp||{};pts[id]=cp[g]||0;continue;}
     if(scale[g]!==undefined)pts[id]=scale[g]; else pts[id]=0;
   }
   if(pts.m1!==undefined&&pts.m2!==undefined){if(pts.m1>=pts.m2)delete pts.m2;else delete pts.m1;}
   var total=0,used={};
   if(f.req){for(var i=0;i<f.req.length;i++){var r=f.req[i];if(pts[r.id]===undefined)return 0;var wt=r.wt||1;total+=pts[r.id]*wt;used[r.id]=true;}}
+  var incN=0;
+  if(f.inc){for(var i=0;i<f.inc.length;i++){var sid=f.inc[i];if(pts[sid]!==undefined){var w=(f.w&&f.w[sid])||1;total+=pts[sid]*w;used[sid]=true;incN++;}}}
   if(f.bn){
     var rem=[];for(var id in pts){if(!used[id])rem.push([id,pts[id]]);}
     var ww=f.w||{};
     rem=rem.map(function(e){var w=ww[e[0]]||1;if(f.aplw&&f.aplw.indexOf(e[0])>=0)w=1.5;return{id:e[0],p:e[1],w:w,ws:e[1]*w};});
     rem.sort(function(a,b){return b.ws-a.ws;});
-    var n=f.bn-(f.req?f.req.length:0);
+    var n=f.bn-(f.req?f.req.length:0)-incN;
     for(var i=0;i<Math.min(n,rem.length);i++){total+=rem[i].ws;used[rem[i].id]=true;}
+    // 6th/7th subject bonus
+    var bonusW=f.bonusW||0.2;
+    if(f.bonus6&&rem.length>n){var b6=rem[n];total+=b6.ws*bonusW;}
+    if(f.bonus7&&rem.length>n+1){var b7=rem[n+1];total+=b7.ws*bonusW;}
   }
   return Math.round(total*100)/100;
 }
@@ -919,7 +1007,9 @@ function rProg(grades){
   var so={safe:0,likely:1,possible:2,hard:3,unknown:4};
   _items.sort(function(a,b){if(taken>0){if(so[a.st]!==so[b.st])return so[a.st]-so[b.st];return b.score-a.score;}return(b.prog.a?b.prog.a.m||0:0)-(a.prog.a?a.prog.a.m||0:0);});
   var fi=_items.filter(function(it){
-    if(uf!=='all'&&it.uni.id!==uf)return false;
+    if(uf==='hkmu'){if(it.uni.id!=='hkmu'||it.prog.code.indexOf('JSSU')===0)return false;}
+    else if(uf==='hkmu-sssdp'){if(it.uni.id!=='hkmu'||it.prog.code.indexOf('JSSU')!==0)return false;}
+    else if(uf!=='all'&&it.uni.id!==uf)return false;
     if(sf!=='all'&&it.st!==sf)return false;
     if(sv){var t=(it.prog.code+it.prog.nm+it.uni.n+it.prog.fac).toLowerCase();if(t.indexOf(sv)<0)return false;}
     return true;
@@ -928,7 +1018,7 @@ function rProg(grades){
   if(fi.length===0){list.innerHTML='<div style="text-align:center;padding:30px;color:var(--sub)">沒有符合條件的課程</div>';return;}
   list.innerHTML=fi.map(function(it,idx){
     var gi=_items.indexOf(it);
-    return '<div class="pi" onclick="showDetail('+gi+')"><div><div class="pn"><span class="ut" style="background:'+it.uni.c+'">'+it.uni.s+'</span>'+it.prog.code+' '+it.prog.nm+(it.uni.sssdp?' <span class="ssb">SSSDP</span>':'')+((NEW_PROGS.indexOf(it.prog.code)>=0)?' <span style="background:#e0f2fe;color:#0369a1;font-size:8.5px;font-weight:600;padding:1.5px 5px;border-radius:3px;margin-left:3px">🆕 新課程</span>':'')+'</div><div class="pm">'+it.prog.fac+' · '+it.prog.f.d+(it.prog.pr?' · ⚠️先決條件':'')+'</div></div><div class="ps">'+(taken>0?'<div class="pp"><div class="v">'+it.score.toFixed(1)+'</div><div class="l">你的分</div></div>':'')+'<div class="pp"><div class="v">'+(it.prog.a?it.prog.a.m||'—':'—')+'</div><div class="l">中位</div></div><div class="pp"><div class="v">'+(it.prog.a?it.prog.a.lq||'—':'—')+'</div><div class="l">LQ</div></div>'+(taken>0?'<span class="stb st-'+it.st+'">'+it.lb+'</span>':'')+'</div></div>';
+    return '<div class="pi" onclick="showDetail('+gi+')"><div><div class="pn"><span class="ut" style="background:'+it.uni.c+'">'+it.uni.s+'</span>'+it.prog.code+' '+it.prog.nm+(it.prog.code.indexOf('JSSU')===0?' <span class="ssb">SSSDP</span>':(it.uni.sssdp?' <span class="ssb">SSSDP</span>':(it.uni.id==='hkmu'&&it.prog.code.indexOf('JS9')===0?' <span class="sfb">Self-finance</span>':'')))+((NEW_PROGS.indexOf(it.prog.code)>=0)?' <span style="background:#e0f2fe;color:#0369a1;font-size:8.5px;font-weight:600;padding:1.5px 5px;border-radius:3px;margin-left:3px">🆕 新課程</span>':'')+'</div><div class="pm">'+it.prog.fac+' · '+it.prog.f.d+(it.prog.pr?' · ⚠️先決條件':'')+'</div></div><div class="ps">'+(taken>0?'<div class="pp"><div class="v">'+it.score.toFixed(1)+'</div><div class="l">你的分</div></div>':'')+'<div class="pp"><div class="v">'+(it.prog.a?it.prog.a.m||'—':'—')+'</div><div class="l">中位</div></div><div class="pp"><div class="v">'+(it.prog.a?it.prog.a.lq||'—':'—')+'</div><div class="l">LQ</div></div>'+(taken>0?'<span class="stb st-'+it.st+'">'+it.lb+'</span>':'')+'</div></div>';
   }).join('');
 }
 
@@ -960,7 +1050,7 @@ function rWif(grades){
 // ============================================================================
 // PROGRAMME LINKS DATA
 // ============================================================================
-var UNI_JUPAS_PATH={hku:'hku',cuhk:'cuhk',hkust:'hkust',cityu:'cityu',polyu:'polyu',hkbu:'hkbu',lingnan:'lingnan',eduhk:'eduhk',hkmu:'hkmu',thei:'sssdp',sfu:'sssdp',hsuhk:'sssdp',twc:'sssdp',hksyu:'sssdp'};
+var UNI_JUPAS_PATH={hku:'hku',cuhk:'cuhk',hkust:'hkust',cityu:'cityuhk',polyu:'polyu',hkbu:'hkbu',lingnan:'lingnanu',eduhk:'eduhk',hkmu:'hkmu',thei:'sssdp',sfu:'sssdp',hsuhk:'sssdp',twc:'sssdp',hksyu:'sssdp',uowchk:'sssdp',chc:'sssdp'};
 var UNI_ADMISSION_URL={
 hku:'https://www.admissions.hku.hk/apply/jupas/',
 cuhk:'https://admission.cuhk.edu.hk/jupas/',
@@ -1003,7 +1093,7 @@ function showDetail(idx){
   var scale=(uni.gs==='leg'||prog.f.leg)?GPL:GP;
   var bdHtml='';
   if(taken>0){
-    var pts={};for(var id in grades){var g=grades[id];if(g==='not_taken'||g==='U'||id==='csd')continue;pts[id]=scale[g]||0;}
+    var pts={};for(var id in grades){var g=grades[id];if(g==='not_taken'||g==='U'||id==='csd')continue;if(id.indexOf('catb_')===0){if(prog.f.catb==='no')continue;if(uni.cbr==='never'&&!prog.f.catb)continue;if(Array.isArray(prog.f.catb)){var cid=id.replace('catb_','');if(prog.f.catb.indexOf(cid)<0)continue;}var bp=(uni.cbp&&Object.keys(uni.cbp).length)?uni.cbp:{att_d2:4,att_d1:3,att:0};pts[id]=bp[g]||0;continue;}if(id.indexOf('catc_')===0){if(uni.ccr==='never')continue;var cp=uni.ccp||{};pts[id]=cp[g]||0;continue;}pts[id]=scale[g]||0;}
     var ww=prog.f.w||{};
     var ent=[];
     if(prog.f.polyu){
@@ -1011,7 +1101,7 @@ function showDetail(idx){
       for(var id in pts){var wt=5;if(w10.indexOf(id)>=0)wt=10;else if(w7.indexOf(id)>=0)wt=7;ent.push({id:id,p:pts[id],w:wt,wp:pts[id]*wt});}
     }else{for(var id in pts)ent.push({id:id,p:pts[id],w:ww[id]||1,wp:pts[id]*(ww[id]||1)});}
     ent.sort(function(a,b){return b.wp-a.wp;});
-    bdHtml='<table class="bdt"><tr><th>科目</th><th>分數</th><th>加權</th><th>計分</th></tr>'+ent.slice(0,prog.f.polyu?6:(prog.f.bn||5)).map(function(e,i){var sn=SUBJ.find(function(s){return s.id===e.id;});var label=(prog.f.polyu&&i===5)?'(6th bonus ×0.1)':'×'+e.w;var val=(prog.f.polyu&&i===5)?(e.wp*0.1).toFixed(1):e.wp.toFixed(1);return '<tr'+(prog.f.polyu&&i===5?' style="color:var(--sub);font-style:italic"':'')+'><td>'+(sn?sn.n:e.id)+'</td><td>'+e.p+'</td><td>'+label+'</td><td><b>'+val+'</b></td></tr>';}).join('')+'</table>';
+    bdHtml='<table class="bdt"><tr><th>科目</th><th>分數</th><th>加權</th><th>計分</th></tr>'+(function(){var bn=prog.f.polyu?6:(prog.f.bn||5);var extra=(prog.f.bonus7?2:prog.f.bonus6?1:0);var bw=prog.f.bonusW||0.2;return ent.slice(0,bn+extra).map(function(e,i){var sn=SUBJ.find(function(s){return s.id===e.id;});var isBonus6=prog.f.bonus6&&i===bn;var isBonus7=prog.f.bonus7&&(i===bn||i===bn+1);var isPolyBonus=prog.f.polyu&&i===5;var isBonus=isBonus6||isBonus7||isPolyBonus;var label=isPolyBonus?'(6th ×0.1)':isBonus?'×'+e.w+' (bonus '+bw+')':'×'+e.w;var val=isPolyBonus?(e.wp*0.1).toFixed(2):isBonus?(e.wp*bw).toFixed(2):e.wp.toFixed(2);return '<tr'+(isBonus?' style="color:#b08000;font-style:italic;background:#fff8e1"':'')+'><td>'+(sn?sn.n:e.id)+'</td><td>'+e.p+'</td><td>'+label+'</td><td><b>'+val+'</b></td></tr>';});})().join('')+'</table>';
   }
   // Build links for back face
   var jupasUrl=getJupasUrl(uni,prog.code);
@@ -1299,7 +1389,12 @@ function calc(){var g=gG();rSum(g);rProg(g);rWif(g);rDrop(g);}
 function rUF(){
   var sel=document.getElementById('funi');var added=false;
   UNI.forEach(function(u){
-    if(u.sssdp&&!added){var o=document.createElement('option');o.disabled=true;o.textContent='── SSSDP ──';sel.appendChild(o);added=true;}
+    if(u.sssdp&&!added){
+      var sep=document.createElement('option');sep.disabled=true;sep.textContent='── SSSDP ──';sel.appendChild(sep);
+      // Inject HKMU SSSDP as first item inside SSSDP section
+      var oh=document.createElement('option');oh.value='hkmu-sssdp';oh.textContent='⬡ HKMU SSSDP 香港都會大學';sel.appendChild(oh);
+      added=true;
+    }
     var o=document.createElement('option');o.value=u.id;o.textContent=(u.sssdp?'⬡ ':'')+u.s+' '+u.n;sel.appendChild(o);
   });
 }
@@ -1331,5 +1426,15 @@ try{
   renderFlex();
 }catch(err){if(typeof console!=='undefined')console.warn('Init:',err);}
 </script>
-</body>
-</html>
+
+<!-- Chatbot FAB -->
+<div id="chatbot-fab">
+  <div class="fab-tooltip">🎓 升學資訊 &amp; 個人輔導小助手<br>JUPAS、OEA、SLP、面試模擬…</div>
+  <a class="fab-btn" href="https://gemini.google.com/gem/1ZAnwcDSQ8_rsfXtcWBToGmxas5JTA2eh?usp=sharing" target="_blank" rel="noopener">
+    <span class="fab-icon">🤖</span> 升學輔導
+  </a>
+</div>
+
+
+
+</body></html>

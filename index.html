@@ -1,5 +1,332 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"><head>
+<html lang="zh-Hant"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #1a1a1a;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #b4b4bb;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>HYCer JUPAS 計分神器 2026</title>
@@ -156,8 +483,8 @@ header .meta{font-size:11px;opacity:.75;margin-top:10px;letter-spacing:0.01em}
 <div class="wrap">
 <header>
 <h1>🎓 HYCer JUPAS 計分神器 2026</h1>
-<p>準備好考DSE了嗎？做了多少份Past Paper？報了多少個補習班？<br>輸入老師給你的預測成績，即時計算 16 所 JUPAS 院校共 491 個課程的入學分數。支援科目加權、What-If 分析（含退修分析）及課程詳情。</p>
-<div class="meta">數據: 2025 JUPAS 官方入學成績 · 16 所院校 · 491 個課程 · 含完整科目加權 · 8.5分制(UGC) + 7分制(HKBU/嶺大/教大/都會/SSSDP)</div>
+<p>準備好考DSE了嗎？做了多少份Past Paper？報了多少個補習班？<br>輸入老師給你的預測成績，即時計算 16 所 JUPAS 院校共 423 個課程的入學分數。支援科目加權、What-If 分析（含退修分析）及課程詳情。</p>
+<div class="meta">數據: 2025 JUPAS 官方入學成績 · 16 所院校 · 423 個課程 · 含完整科目加權 · 8.5分制(UGC) + 7分制(HKBU/嶺大/教大/都會/SSSDP)</div>
 </header>
 <div class="card"><div class="card-hd"><h2>✏️ 你的 DSE 成績</h2><div class="bgrp"><button class="btn btn-g" id="btn-save">💾 儲存</button><button class="btn btn-g" id="btn-load">📂 載入</button><button class="btn btn-g" id="btn-reset">🗑️ 重設</button></div></div><div id="core-inputs"><h3 style="font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">核心科目</h3><div class="sgrid" id="core-grid"></div></div><div id="elective-inputs" style="margin-top:16px"><h3 style="font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">選修科目 <span style="font-weight:400;text-transform:none">(最多4科)</span></h3><div id="elective-slots"></div><button class="btn btn-g" id="btn-add-elective" style="margin-top:8px">＋ 新增選修科</button></div><div class="pfl" id="pfl"></div></div>
 <div class="card" id="sum-sec" style="display:none"><div class="card-hd"><h2>📈 成績概覽</h2></div><div class="ssm" id="ssm"></div><div class="uov" id="uov"></div></div>
@@ -476,78 +803,6 @@ var UNI=[
 {code:'JS1806',nm:'理學士(生物科學)',fac:'醫學院',f:{catb:['medsci','healthsci','forensic','sportsci'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5},inc:['chi','eng','math']},a:{uq:null,m:35.5,lq:35.0}},
 {code:'JS1807',nm:'理學士(生物醫學)',fac:'醫學院',f:{catb:['medsci','healthsci','forensic','sportsci'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5},inc:['chi','eng','math']},a:{uq:null,m:45.5,lq:43.0}},
 {code:'JS1300',nm:'Integrative Bioscience & Bioengineering Programme (Bio³)',fac:'College of Biomedicine',f:{catb:['medsci','healthsci','forensic','sportsci'],inc:['chi','eng','math'],d:'3 core+2 elective (Eng×2,Bio×2,Chem×2)',bn:5,w:{eng:2,bio:2,chem:2,math:1.5,bafs:1.5,ict:1.5,m1:1.5,m2:1.5,phy:1.5}},a:{uq:null,m:null,lq:null}},
-]},
-{id:'polyu',s:'PolyU',n:'香港理工大學',c:'#a4123f',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:8.5,N2:5.5,N3:3,G6:8.5,G5:7,G4:4,G3:3,C2:8.5,C1:7,B2:5.5,B1:4,A2:3},p:[
-{code:'JS3000',nm:'跨學科組合學士課程',fac:'跨學科',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true},a:{uq:null,m:null,lq:null}},
-{code:'JS3003',nm:'工商管理組合學士課程',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:177.0}},
-{code:'JS3004',nm:'建設及環境組合學士課程',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','ict'],bonus6:true},a:{uq:null,m:184.0,lq:181.0}},
-{code:'JS3005',nm:'工程學科組合學士課程',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','dat','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiLit','geog','intSci','litEng']},a:{uq:null,m:215.0,lq:205.0}},
-{code:'JS3006',nm:'計算機及數學科學組合學士課程',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:215.0,lq:210.0}},
-{code:'JS3007',nm:'人文學科組合學士課程',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:185.0,lq:179.0}},
-{code:'JS3008',nm:'理學組合學士課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
-{code:'JS3011',nm:'生物科技及化學科技(榮譽)理學士組合課程',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math','phy'],w7:['chi','intSci','m1','m2']},a:{uq:null,m:209.0,lq:203.5}},
-{code:'JS3030',nm:'物理學(榮譽)理學士副主修人工智能及數據分析 / 創新及創業',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','intSci','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:215.0,lq:205.0}},
-{code:'JS3060',nm:'會計及金融(榮譽)工商管理學士組合課程 (會計學 / 會計及金融 / 數碼金融及投資學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:185.5,lq:185.0}},
-{code:'JS3070',nm:'環球商業及物流、航空、航運及供應鏈管理(榮譽)工商管理學士組合課程',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:179.0,lq:175.0}},
-{code:'JS3080',nm:'管理及市場學(榮譽)工商管理學士組合課程 (管理學 / 市場學)',fac:'商學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','econ','geog','hist','intSci','litEng','m1','m2','phy']},a:{uq:null,m:182.5,lq:179.0}},
-{code:'JS3130',nm:'空間數據科學及智慧城市(榮譽)理學士組合課程 (土地測量及地理資訊學 / 城市信息學及智慧城市)',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','geog','ict','intSci','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','hist','hmsc','litEng','mus','pe','ths','va'],bonus6:true},a:{uq:null,m:206.0,lq:203.0}},
-{code:'JS3140',nm:'航空工程學(榮譽)工學士組合課程 (航空工程學 / 民航工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bio','chi','intSci']},a:{uq:null,m:210.0,lq:205.0}},
-{code:'JS3150',nm:'生物醫學工程(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','m1','m2','math','phy'],w7:['chi','eng']},a:{uq:null,m:218.0,lq:213.5}},
-{code:'JS3160',nm:'體育科技(榮譽)理學士',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5 approx.)',bn:5,polyu:true,w10:['eng','math','m1','m2','bio','chem','phy','bafs','econ','ict'],w7:['chi']},a:{uq:null,m:null,lq:null}},
-{code:'JS3170',nm:'電機工程學(榮譽)工學士組合課程 (電機工程學 / 運輸系統工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','chiLit','dat','econ','litEng']},a:{uq:null,m:215.0,lq:210.0}},
-{code:'JS3180',nm:'資訊及人工智能工程學(榮譽)工學士/理學士組合課程 (物聯網 / 人工智能 / 資訊安全)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['chi','dat','intSci']},a:{uq:null,m:null,lq:null}},
-{code:'JS3211',nm:'建築科學及工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','math','phy'],w7:['bafs','bio','chem','chi','dat','econ','geog','hmsc','ict','intSci','m1','m2'],bonus6:true},a:{uq:null,m:181.5,lq:179.5}},
-{code:'JS3214',nm:'建築學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','intSci','litEng','m1','m2','math','mus','phy','ths','va'],bonus6:true},a:{uq:null,m:165.8,lq:163.1}},
-{code:'JS3220',nm:'應用數學及金融分析(榮譽)理學士組合課程 (應用數學 / 投資科學及金融分析 / 量化金融及金融科技)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng','math'],w7:['bafs','bio','chem','chi','combSci','econ','ict','m1','m2','phy']},a:{uq:null,m:193.5,lq:189.5}},
-{code:'JS3223',nm:'數據科學及人工智能(榮譽)理學士組合課程 (數據科學及分析 / 金融科技及人工智能)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','intSci']},a:{uq:null,m:220.0,lq:211.0}},
-{code:'JS3236',nm:'產品創新及智能製造(榮譽)工學士組合課程 (產品創新兼市場學 / 智能製造)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','ict','m1','m2','math','phy'],w7:['bafs','chi','dat','econ','intSci']},a:{uq:null,m:195.0,lq:193.0}},
-{code:'JS3237',nm:'智能供應鏈及工程管理(榮譽)理學士組合課程 (智能供應鏈 / 工程管理兼數據分析 / 航空營運及系統學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','econ','eng','ict','math'],w7:['bio','chem','chi','combSci_bc','combSci_bp','combSci_pc','dat','geog','intSci','phy']},a:{uq:null,m:195.0,lq:193.0}},
-{code:'JS3240',nm:'英文及應用語言學(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','chiHist','chiLit','dat','ethics','geog','hist','hmsc','ict','litEng','math','mus','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:178.0,lq:175.0}},
-{code:'JS3242',nm:'言語治療(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','eng','math'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','phy','ths'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:264.3,lq:259.8}},
-{code:'JS3243',nm:'語言科學及技術(榮譽)理學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 +6th (×10/×7)',bn:5,polyu:true,w10:['chi','eng'],w7:['bafs','bio','chem','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:null,lq:null}},
-{code:'JS3250',nm:'應用社會科學(榮譽)文學士組合課程 (社會工作 / 社會政策及社會創業)',fac:'醫社學院',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:171.5,lq:164.5}},
-{code:'JS3255',nm:'食品科學及營養學(榮譽)理學士組合課程 (食品科技與食物安全 / 人類營養學及健康)',fac:'理學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','eng','math'],w7:['chi','intSci','m1','m2','phy']},a:{uq:null,m:203.0,lq:198.5}},
-{code:'JS3310',nm:'酒店及旅遊管理(榮譽)理學士組合課程 (酒店管理 / 智慧旅遊及酒店產業 / 會展及體驗管理)',fac:'酒旅學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va']},a:{uq:null,m:166.5,lq:163.0}},
-{code:'JS3320',nm:'中國歷史及文化(榮譽)文學士',fac:'人文學院',f:{d:'Chi+Eng+Best 3 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','chiHist','chiLit','eng','hist'],w7:['math'],bonus6:true,inc:['chi','eng']},a:{uq:null,m:223.0,lq:210.0}},
-{code:'JS3337',nm:'精神健康護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:209.0,lq:206.0}},
-{code:'JS3375',nm:'環境工程及可持續發展學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','econ','eng','geog','intSci','m1','m2','math','phy'],w7:['dat','ict'],bonus6:true},a:{uq:null,m:220.0,lq:218.0}},
-{code:'JS3478',nm:'醫療化驗科學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','m1','m2','math'],w7:['phy']},a:{uq:null,m:309.0,lq:306.5}},
-{code:'JS3569',nm:'設計學(榮譽)文學士組合課程',fac:'設計學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chi','dat','eng','ict','math','va'],w7:['bafs','econ','hist','mus','ths']},a:{uq:null,m:190,lq:178}},
-{code:'JS3612',nm:'放射學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','math','phy'],w7:['m1','m2']},a:{uq:null,m:339.0,lq:328.5}},
-{code:'JS3624',nm:'職業治療學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','phy'],w7:['bafs','chiHist','chiLit','dat','econ','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math']},a:{uq:null,m:279.5,lq:278}},
-{code:'JS3636',nm:'物理治療學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','chi','combSci','eng','intSci','m1','m2','math','phy'],w7:['hmsc','pe']},a:{uq:null,m:320.0,lq:320.0}},
-{code:'JS3648',nm:'護理學(榮譽)理學士',fac:'醫社學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chi','combSci','eng','math'],w7:['bafs','chem','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','mus','pe','phy','ths','va']},a:{uq:null,m:218.0,lq:213.5}},
-{code:'JS3739',nm:'土木工程學(榮譽)工學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['chem','combSci','eng','intSci','m1','m2','math','phy'],w7:['bio','chi','dat','econ','geog','ict'],bonus6:true},a:{uq:null,m:216.5,lq:205.0}},
-{code:'JS3741',nm:'機械工程學(榮譽)工學士組合課程 (智能機械人工程學 / 機械工程學)',fac:'工程學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci','dat','eng','ict','m1','m2','math','phy'],w7:['chi']},a:{uq:null,m:208.0,lq:205.0}},
-{code:'JS3789',nm:'地產及建設測量學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['eng'],w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','phy','ths'],bonus6:true},a:{uq:null,m:175.8,lq:165.3}},
-{code:'JS3791',nm:'建築工程及管理學(榮譽)理學士',fac:'建環學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['combSci','eng','m1','m2','math','phy'],w7:['bafs','bio','chem','chi','chiHist','chiLit','dat','econ','ethics','geog','hist','hmsc','ict','intSci','litEng','ths'],bonus6:true},a:{uq:null,m:188.1,lq:185.1}},
-{code:'JS3868',nm:'電子計算及人工智能(榮譽)理學士組合課程 (計算機科學 / 企業信息管理)',fac:'計算科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bafs','bio','chem','combSci','econ','eng','ict','m1','m2','math','phy'],w7:['chi','chiHist','chiLit','dat','ethics','geog','hist','hmsc','intSci','litEng','mus','pe','ths','va']},a:{uq:null,m:230.0,lq:215.0}},
-{code:'JS3050',nm:'時裝(榮譽)文學士',fac:'設計學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','bafs','chem','chiHist','combSci_bc','econ','geog','hist','tl_fct','va'],w7:['chi','combSci_bp','combSci_pc','dat','eng','ict','intSci','math','m1','m2','phy','tl_fst'],bonus6:true},a:{uq:null,m:177.0,lq:164.0}},
-{code:'JS3290',nm:'眼科視光學(榮譽)理學士',fac:'醫療及社會科學院',f:{d:'Best 5 (×10/×7/×5)',bn:5,polyu:true,w10:['bio','chem','combSci_bc','combSci_bp','combSci_pc','eng','math','m1','m2','phy'],w7:['chi'],bonus6:true},a:{uq:null,m:277.8,lq:247.8}}
-]},
-{id:'hkbu',s:'HKBU',n:'香港浸會大學',c:'#a18249',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:5.5,N2:4,N3:3,G6:5.5,G5:4,G4:3,G3:2,C2:5.5,C1:4,B2:3,B1:2,A2:2},gs:'leg',p:[
-{code:'JS2020',nm:'文學士(榮譽) (中國語言文學 / 創意及專業寫作 / 英國語言文學 / 人文學 / 翻譯學)',fac:'文學院',f:{catb:['translation','creativeeng','proeng','voceng','film','digitalmedia','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:21.95,lq:null}},
-{code:'JS2025',nm:'宗教、哲學及倫理文學士(榮譽)',fac:'文學院',f:{catb:['psych','legal','childcare','translation','creativeeng','proeng','voceng'],d:'Best 5',bn:5},a:{uq:null,m:22.07,lq:null}},
-{code:'JS2060',nm:'文學士(榮譽) / 音樂學士(榮譽) (音樂 / 創意產業)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:22.15,lq:null}},
-{code:'JS2110',nm:'工商管理學士(榮譽) - 會計學專修',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.68,lq:null}},
-{code:'JS2120',nm:'工商管理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:21.0,lq:null}},
-{code:'JS2310',nm:'傳理學學士(榮譽) (新聞與數碼媒體 / 公關及廣告)',fac:'傳理學院',f:{catb:['film','digitalmedia','pr','socialmedia','gamedesign','visual','music'],d:'Best 5',bn:5},a:{uq:null,m:21.85,lq:null}},
-{code:'JS2320',nm:'傳理學學士(榮譽)電影學(動畫及媒體藝術專修)',fac:'傳理學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:null,lq:null}},
-{code:'JS2330',nm:'電影電視學文學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','gamedesign','visual','pr','socialmedia'],d:'Best 5',bn:5},a:{uq:null,m:18.55,lq:null}},
-{code:'JS2340',nm:'環球銛幕演藝藝術學士(榮譽)',fac:'傳理學院',f:{catb:['film','digitalmedia','music','visual'],d:'Best 5',bn:5},a:{uq:null,m:21.83,lq:null}},
-{code:'JS2370',nm:'傳理學學士(榮譽)遊戲設計與動畫',fac:'傳理學院',f:{catb:['gamedesign','film','digitalmedia','visual','music','pr','socialmedia','computer','data'],d:'Best 5',bn:5},a:{uq:null,m:22.99,lq:null}},
-{code:'JS2410',nm:'中醫學學士及生物醫學理學士(榮譽)',fac:'醫學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:20.15,lq:null}},
-{code:'JS2510',nm:'理學士(榮譽)',fac:'理學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:32.27,lq:null}},
-{code:'JS2610',nm:'文學士(榮譽) / 社會科學學士(榮譽) (歐洲研究[法文/德文] / 地理 / 全球及中國研究 / 政治及國際關係學 / 歷史 / 社會學)',fac:'文學院',f:{catb:'no',d:'Best 5',bn:5},a:{uq:null,m:25.5,lq:null}},
-{code:'JS2620',nm:'體育及康樂管理文學士(榮譽)',fac:'文學院',f:{catb:['healthsci','sportsci','sport','medsci','psych','food'],d:'Best 5',bn:5},a:{uq:null,m:21.3,lq:null}},
-{code:'JS2660',nm:'社會工作學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:24.88,lq:null}},
-{code:'JS2810',nm:'視覺藝術文學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.5,lq:null}},
-{code:'JS2910',nm:'商業計算及數據分析理學士(榮譽)',fac:'商學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.7,lq:null}},
-{code:'JS2920',nm:'藝術及科技文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:20.46,lq:null}},
-{code:'JS2930',nm:'工商管理文學士(榮譽)(環球娛樂)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.34,lq:null}},
-{code:'JS2940',nm:'社會科學學士(榮譽) / 理學士(榮譽) 健康與社會福祉創新',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:18.9,lq:null}},
-{code:'JS2950',nm:'文理及科技學士(榮譽)個人化專修',fac:'Division o…',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:25.54,lq:null}},
-{code:'JS2960',nm:'數位未來與人文學科文理學士(榮譽)',fac:'文學院',f:{catb:'yes',d:'Best 5',bn:5},a:{uq:null,m:19.73,lq:null}}
 ]},
 {id:'polyu',s:'PolyU',n:'香港理工大學',c:'#a4123f',cbr:'sometimes',cbp:{att_d2:4,att_d1:3,att:0},ccr:'count',ccp:{N1:8.5,N2:5.5,N3:3,G6:8.5,G5:7,G4:4,G3:3,C2:8.5,C1:7,B2:5.5,B1:4,A2:3},p:[
 {code:'JS3000',nm:'跨學科組合學士課程',fac:'跨學科',f:{d:'Best 5 (×7/×5)',bn:5,polyu:true,w7:['bafs','bio','chem','chi','chiHist','chiLit','combSci','dat','econ','eng','ethics','geog','hist','hmsc','ict','intSci','litEng','m1','m2','math','mus','pe','phy','ths','va'],bonus6:true},a:{uq:null,m:null,lq:null}},
